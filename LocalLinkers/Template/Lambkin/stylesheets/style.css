@@ -1,4 +1,4 @@
-@charset utf-8;
+﻿@charset utf-8;
 
 /* CSS Document */
 /*
@@ -292,6 +292,8 @@ h1, h2, h3, h4, h5, h6{
 
 .about-details-red p, .about-details-black p{
 	font-family: "Open_Sans_R";
+    height:125px;
+    overflow:auto;
 	font-size: 14px;
 	line-height:21px; 
 	text-align: left;

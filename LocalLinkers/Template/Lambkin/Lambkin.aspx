@@ -226,11 +226,11 @@
                                     <ItemTemplate>
                                         <article class="span3 service_panel_mrgnbtm">
                                             <div class="about-heading-<%#(Convert.ToInt32(Eval("SNO").ToString()) % 2 == 0?"black":"red")%>">
-                                                <img src="images/about-images/heading-<%#(Convert.ToInt32(Eval("SNO").ToString()) % 2 == 0?"two":"one")%>.png" alt="realm">
+                                                <img src="images/about-images/heading-<%#(Convert.ToInt32(Eval("SNO").ToString()) % 2 == 0?"two":"one")%>.png" alt="realm" />
                                             </div>
                                             <div class="about-details-red">
                                                 <h3><%#Eval("Title") %></h3>
-                                                <p><%#Eval("Description") %>< </p>
+                                                <p><%#Eval("Description") %> </p>
                                             </div>
                                         </article>
                                     </ItemTemplate>
