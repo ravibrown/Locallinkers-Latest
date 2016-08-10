@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19592176-CDBC-4CD1-9E0C-4C0B6E56C094}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\..\..\..\GitHub\MachineDalal-Website\MachineDalal\bin\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ClsBusiness.cs" />
+    <Compile Include="Classes\ClsBusinessBooking.cs" />
+    <Compile Include="Classes\ClsCoupons.cs" />
+    <Compile Include="Classes\ClsUserPoints.cs" />
+    <Compile Include="Classes\ClsOrderDetailImages.cs" />
+    <Compile Include="Classes\ClsOrderDetails.cs" />
+    <Compile Include="Classes\ClsOrders.cs" />
+    <Compile Include="Classes\ClsOrderMapping.cs" />
+    <Compile Include="Classes\ClsOrderAddress.cs" />
+    <Compile Include="Classes\ClsCategory.cs" />
+    <Compile Include="Classes\ClsCommon.cs" />
+    <Compile Include="Classes\ClsBusinessImages.cs" />
+    <Compile Include="Classes\ClsProductImages.cs" />
+    <Compile Include="Classes\ClsProducts.cs" />
+    <Compile Include="Classes\ClsTemplateAboutUs.cs" />
+    <Compile Include="Classes\ClsTemplateContact.cs" />
+    <Compile Include="Classes\ClsTemplate.cs" />
+    <Compile Include="Classes\ClsHomeSlider.cs" />
+    <Compile Include="Classes\ClsTemplateSlider.cs" />
+    <Compile Include="Classes\ClsTemplateServices.cs" />
+    <Compile Include="Classes\ClsTemplatePortfolio.cs" />
+    <Compile Include="Classes\ClsLogin.cs" />
+    <Compile Include="Classes\ClsCouponImages.cs" />
+    <Compile Include="Classes\ClsSubCategory.cs" />
+    <Compile Include="Classes\EntityContext.cs" />
+    <Compile Include="LocalLinkers.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalLinkers.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocalLinkers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocalLinkers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalLinkers.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesClasses\ClsPropBusiness.cs" />
+    <Compile Include="PropertiesClasses\ClsPropCategory.cs" />
+    <Compile Include="PropertiesClasses\ClsPropCoupons.cs" />
+    <Compile Include="PropertiesClasses\ClsPropSubCategory.cs" />
+    <Compile Include="PropertiesClasses\ClsPropOrderDetails.cs" />
+    <Compile Include="PropertiesClasses\ClsPropOrderList.cs" />
+    <Compile Include="PropertiesClasses\ClsPropProductImages.cs" />
+    <Compile Include="PropertiesClasses\ClsPropProducts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_GetBusinessListingByDistance_Result.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetCouponListingByDistance_Result.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetCouponListingByMultiPolygon_Result.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetCouponListingByMultiPolygon_Result1.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result1.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result10.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result11.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result12.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result13.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result2.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result3.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result4.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result5.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result6.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result7.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result8.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Business_Result9.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result1.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result2.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result3.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result4.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result5.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result6.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result7.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Coupons_Result8.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Products_Result.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Products_Result1.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Products_Result2.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetDistance_Products_Result3.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetProductListingByDistance_Result.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Business.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BusinessBooking.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BusinessImages.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Category.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Cities.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_CouponImages.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Coupons.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HomeSlider.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Login.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_OrderAddress.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_OrderDetailImages.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_OrderDetails.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Orders.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Order_Product_Mapping.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Portfolio.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductImages.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Products.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Role.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Services.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_SubCategory.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Template.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_TemplateAboutUs.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_TemplateContact.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_TemplateSliders.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UserPoints.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_Business.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_Coupons.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_Products.cs">
+      <DependentUpon>LocalLinkers.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EntityDeploy Include="LocalLinkers.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LocalLinkers.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="LocalLinkers.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LocalLinkers.edmx</DependentUpon>
+      <LastGenOutput>LocalLinkers.Context.cs</LastGenOutput>
+    </None>
+    <None Include="LocalLinkers.edmx.diagram">
+      <DependentUpon>LocalLinkers.edmx</DependentUpon>
+    </None>
+    <None Include="LocalLinkers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LocalLinkers.edmx</DependentUpon>
+      <LastGenOutput>LocalLinkers.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

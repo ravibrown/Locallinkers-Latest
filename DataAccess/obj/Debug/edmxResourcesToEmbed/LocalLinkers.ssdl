@@ -1,0 +1,1281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalLinkersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Business">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber1" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Website" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="SelectedCity" Type="bigint" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Subscription" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="PremiumImage" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tbl_BusinessBooking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="BusinessId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="BookingDate" Type="datetime" />
+    <Property Name="Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_BusinessImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="BusinessId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="ButtonTitle" Type="nvarchar" MaxLength="200" />
+    <Property Name="UserMessage" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_CouponImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="CouponId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Coupons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="200" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PayToMerchant" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CouponPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OfferDetails" Type="nvarchar(max)" />
+    <Property Name="TermsAndCondition" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SelectedPosition" Type="bigint" />
+    <Property Name="SelectedCity" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CouponMessage" Type="nvarchar" MaxLength="100" />
+    <Property Name="Quantity" Type="bigint" />
+    <Property Name="UniqueId" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsAsPerBill" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_HomeSlider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="RoleId" Type="bigint" />
+    <Property Name="VerificationCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="UniqueId" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceCode" Type="nvarchar(max)" />
+    <Property Name="PlatForm" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMEI" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address1" Type="nvarchar(max)" />
+    <Property Name="Address2" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Website" Type="nvarchar" MaxLength="200" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_Order_Product_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="bigint" />
+    <Property Name="ProductId" Type="bigint" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Quantity" Type="bigint" />
+    <Property Name="OriginalProductId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_OrderAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrackingId" Type="nvarchar" MaxLength="100" />
+    <Property Name="BankReferenceNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingAddress" Type="nvarchar(max)" />
+    <Property Name="BillingState" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingZip" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingName" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingCountry" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingTel" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryAddress" Type="nvarchar(max)" />
+    <Property Name="DeliveryState" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryZip" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryCountry" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryTel" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeliveryEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="OrderId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_OrderDetailImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="ProductId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_OrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="200" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PayToMerchant" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CouponPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OfferDetails" Type="nvarchar(max)" />
+    <Property Name="TermsAndCondition" Type="nvarchar(max)" />
+    <Property Name="SelectedPosition" Type="bigint" />
+    <Property Name="SelectedCity" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CouponMessage" Type="nvarchar" MaxLength="100" />
+    <Property Name="Quantity" Type="bigint" />
+    <Property Name="UniqueId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressId" Type="bigint" />
+    <Property Name="TrackingId" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="OfferType" Type="nvarchar" MaxLength="100" />
+    <Property Name="OfferCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReedemPoints" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Portfolio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="500" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_ProductImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="ProductId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ActualPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Stock" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="SelectedCity" Type="bigint" />
+    <Property Name="SelectedPosition" Type="bigint" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Services">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_SubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Template">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="IconImage" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_TemplateAboutUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="AboutUs" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="tagline" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_TemplateContact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="TumblarLink" Type="nvarchar" MaxLength="200" />
+    <Property Name="FaceBookLink" Type="nvarchar" MaxLength="200" />
+    <Property Name="GoogleLink" Type="nvarchar" MaxLength="200" />
+    <Property Name="TwitterLink" Type="nvarchar" MaxLength="200" />
+    <Property Name="PinInterestLink" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Website" Type="nvarchar" MaxLength="200" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tbl_TemplateSliders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_UserPoints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Points" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="OrderId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'locallinkersapp.dbo.view_Business' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_Business">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="CategoryName" />
+      <PropertyRef Name="UserMessage" />
+      <PropertyRef Name="ButtonTitle" />
+      <PropertyRef Name="SubCategoryName" />
+      <PropertyRef Name="Subscription" />
+      <PropertyRef Name="Message" />
+      <PropertyRef Name="Image" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PremiumImage" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber1" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Website" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="Distance" Type="float" />
+    <Property Name="SNO" Type="bigint" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserMessage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ButtonTitle" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SubCategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SelectedCity" Type="bigint" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Subscription" Type="bigint" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="PremiumImage" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'locallinkersapp.dbo.view_Coupons' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_Coupons">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TermsAndCondition" />
+      <PropertyRef Name="IsAsPerBill" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="200" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PayToMerchant" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CouponPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OfferDetails" Type="nvarchar(max)" />
+    <Property Name="TermsAndCondition" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Quantity" Type="bigint" />
+    <Property Name="UniqueId" Type="nvarchar" MaxLength="50" />
+    <Property Name="CouponMessage" Type="nvarchar" MaxLength="100" />
+    <Property Name="SelectedPosition" Type="bigint" />
+    <Property Name="SelectedCity" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="SNO" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="Distance" Type="float" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SubCategoryName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsAsPerBill" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'locallinkersapp.dbo.view_Products' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ActualPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Stock" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="SelectedCity" Type="bigint" />
+    <Property Name="SelectedPosition" Type="bigint" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="100" />
+    <Property Name="Distance" Type="float" />
+    <Property Name="SNO" Type="bigint" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SubCategoryName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__tbl_Busin__Selec__3587F3E0">
+    <End Role="tbl_Cities" Type="Self.tbl_Cities" Multiplicity="0..1" />
+    <End Role="tbl_Business" Type="Self.tbl_Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Business">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Business_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_Business" Type="Self.tbl_Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Business">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Business_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <End Role="tbl_Business" Type="Self.tbl_Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Business">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BusinessBooking_tbl_Business">
+    <End Role="tbl_Business" Type="Self.tbl_Business" Multiplicity="0..1" />
+    <End Role="tbl_BusinessBooking" Type="Self.tbl_BusinessBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_BusinessBooking">
+        <PropertyRef Name="BusinessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BusinessBooking_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_BusinessBooking" Type="Self.tbl_BusinessBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_BusinessBooking">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BusinessImages_tbl_Business">
+    <End Role="tbl_Business" Type="Self.tbl_Business" Multiplicity="0..1" />
+    <End Role="tbl_BusinessImages" Type="Self.tbl_BusinessImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_BusinessImages">
+        <PropertyRef Name="BusinessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CouponImages_tbl_Coupons">
+    <End Role="tbl_Coupons" Type="Self.tbl_Coupons" Multiplicity="0..1" />
+    <End Role="tbl_CouponImages" Type="Self.tbl_CouponImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Coupons">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_CouponImages">
+        <PropertyRef Name="CouponId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Coupons_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_Coupons" Type="Self.tbl_Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Coupons">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Coupons_tbl_Cities">
+    <End Role="tbl_Cities" Type="Self.tbl_Cities" Multiplicity="0..1" />
+    <End Role="tbl_Coupons" Type="Self.tbl_Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Coupons">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Coupons_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <End Role="tbl_Coupons" Type="Self.tbl_Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Coupons">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Order_Product_Mapping_tbl_Orders">
+    <End Role="tbl_Orders" Type="Self.tbl_Orders" Multiplicity="0..1" />
+    <End Role="tbl_Order_Product_Mapping" Type="Self.tbl_Order_Product_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Order_Product_Mapping">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrderDetailImages_tbl_OrderDetails">
+    <End Role="tbl_OrderDetails" Type="Self.tbl_OrderDetails" Multiplicity="0..1" />
+    <End Role="tbl_OrderDetailImages" Type="Self.tbl_OrderDetailImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrderDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetailImages">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrderDetails_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_OrderDetails" Type="Self.tbl_OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetails">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrderDetails_tbl_Cities">
+    <End Role="tbl_Cities" Type="Self.tbl_Cities" Multiplicity="0..1" />
+    <End Role="tbl_OrderDetails" Type="Self.tbl_OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetails">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrderDetails_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <End Role="tbl_OrderDetails" Type="Self.tbl_OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetails">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Orders" Type="Self.tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_OrderAddress">
+    <End Role="tbl_OrderAddress" Type="Self.tbl_OrderAddress" Multiplicity="0..1" />
+    <End Role="tbl_Orders" Type="Self.tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrderAddress">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Portfolio_tbl_Template">
+    <End Role="tbl_Template" Type="Self.tbl_Template" Multiplicity="0..1" />
+    <End Role="tbl_Portfolio" Type="Self.tbl_Portfolio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Portfolio">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductImages_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="0..1" />
+    <End Role="tbl_ProductImages" Type="Self.tbl_ProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_ProductImages">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_Cities">
+    <End Role="tbl_Cities" Type="Self.tbl_Cities" Multiplicity="0..1" />
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Services_tbl_Template">
+    <End Role="tbl_Template" Type="Self.tbl_Template" Multiplicity="0..1" />
+    <End Role="tbl_Services" Type="Self.tbl_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Services">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SubCategory_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_SubCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TemplateAboutUs_tbl_Template">
+    <End Role="tbl_Template" Type="Self.tbl_Template" Multiplicity="0..1" />
+    <End Role="tbl_TemplateAboutUs" Type="Self.tbl_TemplateAboutUs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_TemplateAboutUs">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TemplateContact_tbl_Template">
+    <End Role="tbl_Template" Type="Self.tbl_Template" Multiplicity="0..1" />
+    <End Role="tbl_TemplateContact" Type="Self.tbl_TemplateContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_TemplateContact">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TemplateSliders_tbl_Template">
+    <End Role="tbl_Template" Type="Self.tbl_Template" Multiplicity="0..1" />
+    <End Role="tbl_TemplateSliders" Type="Self.tbl_TemplateSliders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_TemplateSliders">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UserPoints_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_UserPoints" Type="Self.tbl_UserPoints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_UserPoints">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_GetBusinessListingByDistance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MyLat" Type="float" Mode="In" />
+    <Parameter Name="MyLong" Type="float" Mode="In" />
+    <Parameter Name="Id" Type="bigint" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="IsApproved" Type="bigint" Mode="In" />
+    <Parameter Name="CategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedCity" Type="bigint" Mode="In" />
+    <Parameter Name="Distance" Type="bigint" Mode="In" />
+    <Parameter Name="BusinessName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Take" Type="bigint" Mode="In" />
+    <Parameter Name="Index" Type="bigint" Mode="In" />
+    <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategoryIds" Type="nvarchar" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="UserId" Type="bigint" Mode="In" />
+    <Parameter Name="CheckUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetCouponListingByDistance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MyLat" Type="float" Mode="In" />
+    <Parameter Name="MyLong" Type="float" Mode="In" />
+    <Parameter Name="Id" Type="bigint" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="IsApproved" Type="bigint" Mode="In" />
+    <Parameter Name="CategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedCity" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedPosition" Type="bigint" Mode="In" />
+    <Parameter Name="Distance" Type="bigint" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Take" Type="bigint" Mode="In" />
+    <Parameter Name="Index" Type="bigint" Mode="In" />
+    <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryIds" Type="nvarchar" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_GetCouponListingByMultiPolygon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MultiPolygon" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDistance_Business" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MyLat" Type="float" Mode="In" />
+    <Parameter Name="MyLong" Type="float" Mode="In" />
+    <Parameter Name="Id" Type="bigint" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="IsApproved" Type="bigint" Mode="In" />
+    <Parameter Name="CategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedCity" Type="bigint" Mode="In" />
+    <Parameter Name="Distance" Type="bigint" Mode="In" />
+    <Parameter Name="BusinessName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Take" Type="bigint" Mode="In" />
+    <Parameter Name="Index" Type="bigint" Mode="In" />
+    <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategoryIds" Type="nvarchar" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="UserId" Type="bigint" Mode="In" />
+    <Parameter Name="CheckUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDistance_Coupons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MyLat" Type="float" Mode="In" />
+    <Parameter Name="MyLong" Type="float" Mode="In" />
+    <Parameter Name="Id" Type="bigint" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="IsApproved" Type="bigint" Mode="In" />
+    <Parameter Name="CategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedCity" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedPosition" Type="bigint" Mode="In" />
+    <Parameter Name="Distance" Type="bigint" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Take" Type="bigint" Mode="In" />
+    <Parameter Name="Index" Type="bigint" Mode="In" />
+    <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryIds" Type="nvarchar" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDistance_Products" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MyLat" Type="float" Mode="In" />
+    <Parameter Name="MyLong" Type="float" Mode="In" />
+    <Parameter Name="Id" Type="bigint" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="IsApproved" Type="bigint" Mode="In" />
+    <Parameter Name="CategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedCity" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedPosition" Type="bigint" Mode="In" />
+    <Parameter Name="Distance" Type="bigint" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Take" Type="bigint" Mode="In" />
+    <Parameter Name="Index" Type="bigint" Mode="In" />
+    <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryIds" Type="nvarchar" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_GetProductListingByDistance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MyLat" Type="float" Mode="In" />
+    <Parameter Name="MyLong" Type="float" Mode="In" />
+    <Parameter Name="Id" Type="bigint" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="IsApproved" Type="bigint" Mode="In" />
+    <Parameter Name="CategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedCity" Type="bigint" Mode="In" />
+    <Parameter Name="SelectedPosition" Type="bigint" Mode="In" />
+    <Parameter Name="Distance" Type="bigint" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Take" Type="bigint" Mode="In" />
+    <Parameter Name="Index" Type="bigint" Mode="In" />
+    <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryIds" Type="nvarchar" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Split" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="String" Type="varchar" Mode="In" />
+    <Parameter Name="Delimiter" Type="char" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="items" Type="varchar" MaxLength="8000" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="LocalLinkersModelStoreContainer">
+    <EntitySet Name="tbl_Business" EntityType="Self.tbl_Business" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_BusinessBooking" EntityType="Self.tbl_BusinessBooking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_BusinessImages" EntityType="Self.tbl_BusinessImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Cities" EntityType="Self.tbl_Cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CouponImages" EntityType="Self.tbl_CouponImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Coupons" EntityType="Self.tbl_Coupons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_HomeSlider" EntityType="Self.tbl_HomeSlider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Login" EntityType="Self.tbl_Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Order_Product_Mapping" EntityType="Self.tbl_Order_Product_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OrderAddress" EntityType="Self.tbl_OrderAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OrderDetailImages" EntityType="Self.tbl_OrderDetailImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OrderDetails" EntityType="Self.tbl_OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Orders" EntityType="Self.tbl_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Portfolio" EntityType="Self.tbl_Portfolio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductImages" EntityType="Self.tbl_ProductImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Products" EntityType="Self.tbl_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Role" EntityType="Self.tbl_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Services" EntityType="Self.tbl_Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SubCategory" EntityType="Self.tbl_SubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Template" EntityType="Self.tbl_Template" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TemplateAboutUs" EntityType="Self.tbl_TemplateAboutUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TemplateContact" EntityType="Self.tbl_TemplateContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TemplateSliders" EntityType="Self.tbl_TemplateSliders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_UserPoints" EntityType="Self.tbl_UserPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="view_Business" EntityType="Self.view_Business" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_Business].[Id] AS [Id], 
+    [view_Business].[CategoryId] AS [CategoryId], 
+    [view_Business].[SubCategoryId] AS [SubCategoryId], 
+    [view_Business].[BusinessName] AS [BusinessName], 
+    [view_Business].[ContactPerson] AS [ContactPerson], 
+    [view_Business].[Address] AS [Address], 
+    [view_Business].[Description] AS [Description], 
+    [view_Business].[PhoneNumber1] AS [PhoneNumber1], 
+    [view_Business].[PhoneNumber2] AS [PhoneNumber2], 
+    [view_Business].[Email] AS [Email], 
+    [view_Business].[Website] AS [Website], 
+    [view_Business].[IsDeleted] AS [IsDeleted], 
+    [view_Business].[IsApprovedByAdmin] AS [IsApprovedByAdmin], 
+    [view_Business].[CreatedDate] AS [CreatedDate], 
+    [view_Business].[UpdatedDate] AS [UpdatedDate], 
+    [view_Business].[CreatedBy] AS [CreatedBy], 
+    [view_Business].[Latitude] AS [Latitude], 
+    [view_Business].[Longitude] AS [Longitude], 
+    [view_Business].[Distance] AS [Distance], 
+    [view_Business].[SNO] AS [SNO], 
+    [view_Business].[CategoryName] AS [CategoryName], 
+    [view_Business].[UserMessage] AS [UserMessage], 
+    [view_Business].[ButtonTitle] AS [ButtonTitle], 
+    [view_Business].[SubCategoryName] AS [SubCategoryName], 
+    [view_Business].[SelectedCity] AS [SelectedCity], 
+    [view_Business].[CityName] AS [CityName], 
+    [view_Business].[Subscription] AS [Subscription], 
+    [view_Business].[Message] AS [Message], 
+    [view_Business].[Image] AS [Image], 
+    [view_Business].[UserId] AS [UserId], 
+    [view_Business].[PremiumImage] AS [PremiumImage]
+    FROM [dbo].[view_Business] AS [view_Business]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_Coupons" EntityType="Self.view_Coupons" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_Coupons].[Id] AS [Id], 
+    [view_Coupons].[CategoryId] AS [CategoryId], 
+    [view_Coupons].[SubCategoryId] AS [SubCategoryId], 
+    [view_Coupons].[Title] AS [Title], 
+    [view_Coupons].[BusinessName] AS [BusinessName], 
+    [view_Coupons].[PhoneNumber] AS [PhoneNumber], 
+    [view_Coupons].[Address] AS [Address], 
+    [view_Coupons].[Latitude] AS [Latitude], 
+    [view_Coupons].[Longitude] AS [Longitude], 
+    [view_Coupons].[ActualPrice] AS [ActualPrice], 
+    [view_Coupons].[SalePrice] AS [SalePrice], 
+    [view_Coupons].[PayToMerchant] AS [PayToMerchant], 
+    [view_Coupons].[CouponPrice] AS [CouponPrice], 
+    [view_Coupons].[OfferDetails] AS [OfferDetails], 
+    [view_Coupons].[TermsAndCondition] AS [TermsAndCondition], 
+    [view_Coupons].[Quantity] AS [Quantity], 
+    [view_Coupons].[UniqueId] AS [UniqueId], 
+    [view_Coupons].[CouponMessage] AS [CouponMessage], 
+    [view_Coupons].[SelectedPosition] AS [SelectedPosition], 
+    [view_Coupons].[SelectedCity] AS [SelectedCity], 
+    [view_Coupons].[CreatedDate] AS [CreatedDate], 
+    [view_Coupons].[SNO] AS [SNO], 
+    [view_Coupons].[UpdatedDate] AS [UpdatedDate], 
+    [view_Coupons].[CreatedBy] AS [CreatedBy], 
+    [view_Coupons].[IsDeleted] AS [IsDeleted], 
+    [view_Coupons].[IsApprovedByAdmin] AS [IsApprovedByAdmin], 
+    [view_Coupons].[Distance] AS [Distance], 
+    [view_Coupons].[CategoryName] AS [CategoryName], 
+    [view_Coupons].[SubCategoryName] AS [SubCategoryName], 
+    [view_Coupons].[CityName] AS [CityName], 
+    [view_Coupons].[Image] AS [Image], 
+    [view_Coupons].[IsAsPerBill] AS [IsAsPerBill]
+    FROM [dbo].[view_Coupons] AS [view_Coupons]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_Products" EntityType="Self.view_Products" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_Products].[Id] AS [Id], 
+    [view_Products].[CategoryId] AS [CategoryId], 
+    [view_Products].[SubCategoryId] AS [SubCategoryId], 
+    [view_Products].[Title] AS [Title], 
+    [view_Products].[ShortDescription] AS [ShortDescription], 
+    [view_Products].[Description] AS [Description], 
+    [view_Products].[ActualPrice] AS [ActualPrice], 
+    [view_Products].[SalePrice] AS [SalePrice], 
+    [view_Products].[Stock] AS [Stock], 
+    [view_Products].[IsDeleted] AS [IsDeleted], 
+    [view_Products].[IsApprovedByAdmin] AS [IsApprovedByAdmin], 
+    [view_Products].[CreatedDate] AS [CreatedDate], 
+    [view_Products].[UpdatedDate] AS [UpdatedDate], 
+    [view_Products].[CreatedBy] AS [CreatedBy], 
+    [view_Products].[SelectedCity] AS [SelectedCity], 
+    [view_Products].[SelectedPosition] AS [SelectedPosition], 
+    [view_Products].[Address] AS [Address], 
+    [view_Products].[Latitude] AS [Latitude], 
+    [view_Products].[Longitude] AS [Longitude], 
+    [view_Products].[Distance] AS [Distance], 
+    [view_Products].[SNO] AS [SNO], 
+    [view_Products].[CategoryName] AS [CategoryName], 
+    [view_Products].[SubCategoryName] AS [SubCategoryName], 
+    [view_Products].[CityName] AS [CityName], 
+    [view_Products].[Image] AS [Image]
+    FROM [dbo].[view_Products] AS [view_Products]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__tbl_Busin__Selec__3587F3E0" Association="Self.FK__tbl_Busin__Selec__3587F3E0">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Business_tbl_Category" Association="Self.FK_tbl_Business_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Business_tbl_SubCategory" Association="Self.FK_tbl_Business_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BusinessBooking_tbl_Business" Association="Self.FK_tbl_BusinessBooking_tbl_Business">
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+      <End Role="tbl_BusinessBooking" EntitySet="tbl_BusinessBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BusinessBooking_tbl_Login" Association="Self.FK_tbl_BusinessBooking_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_BusinessBooking" EntitySet="tbl_BusinessBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BusinessImages_tbl_Business" Association="Self.FK_tbl_BusinessImages_tbl_Business">
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+      <End Role="tbl_BusinessImages" EntitySet="tbl_BusinessImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CouponImages_tbl_Coupons" Association="Self.FK_tbl_CouponImages_tbl_Coupons">
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+      <End Role="tbl_CouponImages" EntitySet="tbl_CouponImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Coupons_tbl_Category" Association="Self.FK_tbl_Coupons_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Coupons_tbl_Cities" Association="Self.FK_tbl_Coupons_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Coupons_tbl_SubCategory" Association="Self.FK_tbl_Coupons_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Order_Product_Mapping_tbl_Orders" Association="Self.FK_tbl_Order_Product_Mapping_tbl_Orders">
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+      <End Role="tbl_Order_Product_Mapping" EntitySet="tbl_Order_Product_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrderDetailImages_tbl_OrderDetails" Association="Self.FK_tbl_OrderDetailImages_tbl_OrderDetails">
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+      <End Role="tbl_OrderDetailImages" EntitySet="tbl_OrderDetailImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrderDetails_tbl_Category" Association="Self.FK_tbl_OrderDetails_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrderDetails_tbl_Cities" Association="Self.FK_tbl_OrderDetails_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrderDetails_tbl_SubCategory" Association="Self.FK_tbl_OrderDetails_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_Login" Association="Self.FK_tbl_Orders_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_OrderAddress" Association="Self.FK_tbl_Orders_tbl_OrderAddress">
+      <End Role="tbl_OrderAddress" EntitySet="tbl_OrderAddress" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Portfolio_tbl_Template" Association="Self.FK_tbl_Portfolio_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_Portfolio" EntitySet="tbl_Portfolio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductImages_tbl_Products" Association="Self.FK_tbl_ProductImages_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductImages" EntitySet="tbl_ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_Category" Association="Self.FK_tbl_Products_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_Cities" Association="Self.FK_tbl_Products_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_SubCategory" Association="Self.FK_tbl_Products_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Services_tbl_Template" Association="Self.FK_tbl_Services_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_Services" EntitySet="tbl_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SubCategory_tbl_Category" Association="Self.FK_tbl_SubCategory_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TemplateAboutUs_tbl_Template" Association="Self.FK_tbl_TemplateAboutUs_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_TemplateAboutUs" EntitySet="tbl_TemplateAboutUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TemplateContact_tbl_Template" Association="Self.FK_tbl_TemplateContact_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_TemplateContact" EntitySet="tbl_TemplateContact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TemplateSliders_tbl_Template" Association="Self.FK_tbl_TemplateSliders_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_TemplateSliders" EntitySet="tbl_TemplateSliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UserPoints_tbl_Login" Association="Self.FK_tbl_UserPoints_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_UserPoints" EntitySet="tbl_UserPoints" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

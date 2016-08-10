@@ -1,0 +1,2094 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalLinkersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LocalLinkersEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="Split" IsComposable="true" ReturnType="Collection(String)">
+      <Parameter Name="String" Mode="In" Type="String" />
+      <Parameter Name="Delimiter" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tbl_BusinessImages" EntityType="LocalLinkersModel.tbl_BusinessImages" />
+    <EntitySet Name="tbl_Category" EntityType="LocalLinkersModel.tbl_Category" />
+    <EntitySet Name="tbl_Cities" EntityType="LocalLinkersModel.tbl_Cities" />
+    <EntitySet Name="tbl_CouponImages" EntityType="LocalLinkersModel.tbl_CouponImages" />
+    <EntitySet Name="tbl_HomeSlider" EntityType="LocalLinkersModel.tbl_HomeSlider" />
+    <EntitySet Name="tbl_Login" EntityType="LocalLinkersModel.tbl_Login" />
+    <EntitySet Name="tbl_OrderDetailImages" EntityType="LocalLinkersModel.tbl_OrderDetailImages" />
+    <EntitySet Name="tbl_Portfolio" EntityType="LocalLinkersModel.tbl_Portfolio" />
+    <EntitySet Name="tbl_ProductImages" EntityType="LocalLinkersModel.tbl_ProductImages" />
+    <EntitySet Name="tbl_Products" EntityType="LocalLinkersModel.tbl_Products" />
+    <EntitySet Name="tbl_Role" EntityType="LocalLinkersModel.tbl_Role" />
+    <EntitySet Name="tbl_Services" EntityType="LocalLinkersModel.tbl_Services" />
+    <EntitySet Name="tbl_SubCategory" EntityType="LocalLinkersModel.tbl_SubCategory" />
+    <EntitySet Name="tbl_Template" EntityType="LocalLinkersModel.tbl_Template" />
+    <EntitySet Name="tbl_TemplateAboutUs" EntityType="LocalLinkersModel.tbl_TemplateAboutUs" />
+    <EntitySet Name="tbl_TemplateContact" EntityType="LocalLinkersModel.tbl_TemplateContact" />
+    <EntitySet Name="tbl_TemplateSliders" EntityType="LocalLinkersModel.tbl_TemplateSliders" />
+    <EntitySet Name="tbl_UserPoints" EntityType="LocalLinkersModel.tbl_UserPoints" />
+    <AssociationSet Name="FK_tbl_Products_tbl_Category" Association="LocalLinkersModel.FK_tbl_Products_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SubCategory_tbl_Category" Association="LocalLinkersModel.FK_tbl_SubCategory_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_Cities" Association="LocalLinkersModel.FK_tbl_Products_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UserPoints_tbl_Login" Association="LocalLinkersModel.FK_tbl_UserPoints_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_UserPoints" EntitySet="tbl_UserPoints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Portfolio_tbl_Template" Association="LocalLinkersModel.FK_tbl_Portfolio_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_Portfolio" EntitySet="tbl_Portfolio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductImages_tbl_Products" Association="LocalLinkersModel.FK_tbl_ProductImages_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductImages" EntitySet="tbl_ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_SubCategory" Association="LocalLinkersModel.FK_tbl_Products_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Services_tbl_Template" Association="LocalLinkersModel.FK_tbl_Services_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_Services" EntitySet="tbl_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TemplateAboutUs_tbl_Template" Association="LocalLinkersModel.FK_tbl_TemplateAboutUs_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_TemplateAboutUs" EntitySet="tbl_TemplateAboutUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TemplateContact_tbl_Template" Association="LocalLinkersModel.FK_tbl_TemplateContact_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_TemplateContact" EntitySet="tbl_TemplateContact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TemplateSliders_tbl_Template" Association="LocalLinkersModel.FK_tbl_TemplateSliders_tbl_Template">
+      <End Role="tbl_Template" EntitySet="tbl_Template" />
+      <End Role="tbl_TemplateSliders" EntitySet="tbl_TemplateSliders" />
+    </AssociationSet>
+    <EntitySet Name="tbl_BusinessBooking" EntityType="LocalLinkersModel.tbl_BusinessBooking" />
+    <AssociationSet Name="FK_tbl_BusinessBooking_tbl_Login" Association="LocalLinkersModel.FK_tbl_BusinessBooking_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_BusinessBooking" EntitySet="tbl_BusinessBooking" />
+    </AssociationSet>
+    <EntitySet Name="tbl_OrderDetails" EntityType="LocalLinkersModel.tbl_OrderDetails" />
+    <AssociationSet Name="FK_tbl_OrderDetails_tbl_Category" Association="LocalLinkersModel.FK_tbl_OrderDetails_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrderDetails_tbl_Cities" Association="LocalLinkersModel.FK_tbl_OrderDetails_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrderDetailImages_tbl_OrderDetails" Association="LocalLinkersModel.FK_tbl_OrderDetailImages_tbl_OrderDetails">
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+      <End Role="tbl_OrderDetailImages" EntitySet="tbl_OrderDetailImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrderDetails_tbl_SubCategory" Association="LocalLinkersModel.FK_tbl_OrderDetails_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_OrderDetails" EntitySet="tbl_OrderDetails" />
+    </AssociationSet>
+    <EntitySet Name="view_Products" EntityType="LocalLinkersModel.view_Products" />
+    <FunctionImport Name="fn_GetDistance_Products" EntitySet="view_Products" ReturnType="Collection(LocalLinkersModel.view_Products)">
+      <Parameter Name="MyLat" Mode="In" Type="Double" />
+      <Parameter Name="MyLong" Mode="In" Type="Double" />
+      <Parameter Name="Id" Mode="In" Type="Int64" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="IsApproved" Mode="In" Type="Int64" />
+      <Parameter Name="CategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SubCategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedCity" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedPosition" Mode="In" Type="Int64" />
+      <Parameter Name="Distance" Mode="In" Type="Int64" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Take" Mode="In" Type="Int64" />
+      <Parameter Name="Index" Mode="In" Type="Int64" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="CategoryIds" Mode="In" Type="String" />
+      <Parameter Name="Keyword" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tbl_Business" EntityType="LocalLinkersModel.tbl_Business" />
+    <AssociationSet Name="FK_tbl_Business_tbl_Category" Association="LocalLinkersModel.FK_tbl_Business_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Business_tbl_Cities" Association="LocalLinkersModel.FK_tbl_Business_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Business_tbl_SubCategory" Association="LocalLinkersModel.FK_tbl_Business_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BusinessBooking_tbl_Business" Association="LocalLinkersModel.FK_tbl_BusinessBooking_tbl_Business">
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+      <End Role="tbl_BusinessBooking" EntitySet="tbl_BusinessBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BusinessImages_tbl_Business" Association="LocalLinkersModel.FK_tbl_BusinessImages_tbl_Business">
+      <End Role="tbl_Business" EntitySet="tbl_Business" />
+      <End Role="tbl_BusinessImages" EntitySet="tbl_BusinessImages" />
+    </AssociationSet>
+    <EntitySet Name="tbl_Coupons" EntityType="LocalLinkersModel.tbl_Coupons" />
+    <EntitySet Name="view_Business" EntityType="LocalLinkersModel.view_Business" />
+    <EntitySet Name="view_Coupons" EntityType="LocalLinkersModel.view_Coupons" />
+    <AssociationSet Name="FK_tbl_Coupons_tbl_Category" Association="LocalLinkersModel.FK_tbl_Coupons_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Coupons_tbl_Cities" Association="LocalLinkersModel.FK_tbl_Coupons_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CouponImages_tbl_Coupons" Association="LocalLinkersModel.FK_tbl_CouponImages_tbl_Coupons">
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+      <End Role="tbl_CouponImages" EntitySet="tbl_CouponImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Coupons_tbl_SubCategory" Association="LocalLinkersModel.FK_tbl_Coupons_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Coupons" EntitySet="tbl_Coupons" />
+    </AssociationSet>
+    <FunctionImport Name="fn_GetDistance_Business" EntitySet="view_Business" ReturnType="Collection(LocalLinkersModel.view_Business)">
+      <Parameter Name="MyLat" Mode="In" Type="Double" />
+      <Parameter Name="MyLong" Mode="In" Type="Double" />
+      <Parameter Name="Id" Mode="In" Type="Int64" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="IsApproved" Mode="In" Type="Int64" />
+      <Parameter Name="CategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SubCategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedCity" Mode="In" Type="Int64" />
+      <Parameter Name="Distance" Mode="In" Type="Int64" />
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="Take" Mode="In" Type="Int64" />
+      <Parameter Name="Index" Mode="In" Type="Int64" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="SubCategoryIds" Mode="In" Type="String" />
+      <Parameter Name="Keyword" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int64" />
+      <Parameter Name="CheckUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fn_GetDistance_Coupons" EntitySet="view_Coupons" ReturnType="Collection(LocalLinkersModel.view_Coupons)">
+      <Parameter Name="MyLat" Mode="In" Type="Double" />
+      <Parameter Name="MyLong" Mode="In" Type="Double" />
+      <Parameter Name="Id" Mode="In" Type="Int64" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="IsApproved" Mode="In" Type="Int64" />
+      <Parameter Name="CategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SubCategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedCity" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedPosition" Mode="In" Type="Int64" />
+      <Parameter Name="Distance" Mode="In" Type="Int64" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Take" Mode="In" Type="Int64" />
+      <Parameter Name="Index" Mode="In" Type="Int64" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="CategoryIds" Mode="In" Type="String" />
+      <Parameter Name="Keyword" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tbl_Orders" EntityType="LocalLinkersModel.tbl_Orders" />
+    <AssociationSet Name="FK_tbl_Orders_tbl_Login" Association="LocalLinkersModel.FK_tbl_Orders_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <EntitySet Name="tbl_OrderAddress" EntityType="LocalLinkersModel.tbl_OrderAddress" />
+    <AssociationSet Name="FK_tbl_Orders_tbl_OrderAddress" Association="LocalLinkersModel.FK_tbl_Orders_tbl_OrderAddress">
+      <End Role="tbl_OrderAddress" EntitySet="tbl_OrderAddress" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <EntitySet Name="tbl_Order_Product_Mapping" EntityType="LocalLinkersModel.tbl_Order_Product_Mapping" />
+    <AssociationSet Name="FK_tbl_Order_Product_Mapping_tbl_Orders" Association="LocalLinkersModel.FK_tbl_Order_Product_Mapping_tbl_Orders">
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+      <End Role="tbl_Order_Product_Mapping" EntitySet="tbl_Order_Product_Mapping" />
+    </AssociationSet>
+    <FunctionImport Name="sp_GetBusinessListingByDistance" ReturnType="Collection(LocalLinkersModel.sp_GetBusinessListingByDistance_Result)">
+      <Parameter Name="MyLat" Mode="In" Type="Double" />
+      <Parameter Name="MyLong" Mode="In" Type="Double" />
+      <Parameter Name="Id" Mode="In" Type="Int64" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="IsApproved" Mode="In" Type="Int64" />
+      <Parameter Name="CategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SubCategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedCity" Mode="In" Type="Int64" />
+      <Parameter Name="Distance" Mode="In" Type="Int64" />
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="Take" Mode="In" Type="Int64" />
+      <Parameter Name="Index" Mode="In" Type="Int64" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="SubCategoryIds" Mode="In" Type="String" />
+      <Parameter Name="Keyword" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int64" />
+      <Parameter Name="CheckUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetCouponListingByDistance" ReturnType="Collection(LocalLinkersModel.sp_GetCouponListingByDistance_Result)">
+      <Parameter Name="MyLat" Mode="In" Type="Double" />
+      <Parameter Name="MyLong" Mode="In" Type="Double" />
+      <Parameter Name="Id" Mode="In" Type="Int64" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="IsApproved" Mode="In" Type="Int64" />
+      <Parameter Name="CategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SubCategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedCity" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedPosition" Mode="In" Type="Int64" />
+      <Parameter Name="Distance" Mode="In" Type="Int64" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Take" Mode="In" Type="Int64" />
+      <Parameter Name="Index" Mode="In" Type="Int64" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="CategoryIds" Mode="In" Type="String" />
+      <Parameter Name="Keyword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetProductListingByDistance" ReturnType="Collection(LocalLinkersModel.sp_GetProductListingByDistance_Result)">
+      <Parameter Name="MyLat" Mode="In" Type="Double" />
+      <Parameter Name="MyLong" Mode="In" Type="Double" />
+      <Parameter Name="Id" Mode="In" Type="Int64" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="IsApproved" Mode="In" Type="Int64" />
+      <Parameter Name="CategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SubCategoryId" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedCity" Mode="In" Type="Int64" />
+      <Parameter Name="SelectedPosition" Mode="In" Type="Int64" />
+      <Parameter Name="Distance" Mode="In" Type="Int64" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Take" Mode="In" Type="Int64" />
+      <Parameter Name="Index" Mode="In" Type="Int64" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="CategoryIds" Mode="In" Type="String" />
+      <Parameter Name="Keyword" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_GetDistance_Coupons_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Coupons_Result1">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Coupons_Result2">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Products_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ShortDescription" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Stock" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Coupons_Result3">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CouponMessage" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result1">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result2">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result3">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Coupons_Result4">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CouponMessage" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Coupons_Result5">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CouponMessage" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result4">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Products_Result1">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ShortDescription" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Stock" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result5">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result6">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result7">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result8">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Coupons_Result6">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CouponMessage" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Products_Result2">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ShortDescription" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Stock" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <EntityType Name="tbl_BusinessImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="tbl_Business" Relationship="LocalLinkersModel.FK_tbl_BusinessImages_tbl_Business" FromRole="tbl_BusinessImages" ToRole="tbl_Business" />
+  </EntityType>
+  <EntityType Name="tbl_Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="ButtonTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Products" Relationship="LocalLinkersModel.FK_tbl_Products_tbl_Category" FromRole="tbl_Category" ToRole="tbl_Products" />
+    <NavigationProperty Name="tbl_SubCategory" Relationship="LocalLinkersModel.FK_tbl_SubCategory_tbl_Category" FromRole="tbl_Category" ToRole="tbl_SubCategory" />
+    <NavigationProperty Name="tbl_OrderDetails" Relationship="LocalLinkersModel.FK_tbl_OrderDetails_tbl_Category" FromRole="tbl_Category" ToRole="tbl_OrderDetails" />
+    <NavigationProperty Name="tbl_Business" Relationship="LocalLinkersModel.FK_tbl_Business_tbl_Category" FromRole="tbl_Category" ToRole="tbl_Business" />
+    <NavigationProperty Name="tbl_Coupons" Relationship="LocalLinkersModel.FK_tbl_Coupons_tbl_Category" FromRole="tbl_Category" ToRole="tbl_Coupons" />
+  </EntityType>
+  <EntityType Name="tbl_Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Products" Relationship="LocalLinkersModel.FK_tbl_Products_tbl_Cities" FromRole="tbl_Cities" ToRole="tbl_Products" />
+    <NavigationProperty Name="tbl_OrderDetails" Relationship="LocalLinkersModel.FK_tbl_OrderDetails_tbl_Cities" FromRole="tbl_Cities" ToRole="tbl_OrderDetails" />
+    <NavigationProperty Name="tbl_Business" Relationship="LocalLinkersModel.FK_tbl_Business_tbl_Cities" FromRole="tbl_Cities" ToRole="tbl_Business" />
+    <NavigationProperty Name="tbl_Coupons" Relationship="LocalLinkersModel.FK_tbl_Coupons_tbl_Cities" FromRole="tbl_Cities" ToRole="tbl_Coupons" />
+  </EntityType>
+  <EntityType Name="tbl_CouponImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CouponId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_Coupons" Relationship="LocalLinkersModel.FK_tbl_CouponImages_tbl_Coupons" FromRole="tbl_CouponImages" ToRole="tbl_Coupons" />
+  </EntityType>
+  <EntityType Name="tbl_HomeSlider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tbl_Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="RoleId" Type="Int64" />
+    <Property Name="VerificationCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UniqueId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PlatForm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_UserPoints" Relationship="LocalLinkersModel.FK_tbl_UserPoints_tbl_Login" FromRole="tbl_Login" ToRole="tbl_UserPoints" />
+    <NavigationProperty Name="tbl_BusinessBooking" Relationship="LocalLinkersModel.FK_tbl_BusinessBooking_tbl_Login" FromRole="tbl_Login" ToRole="tbl_BusinessBooking" />
+    <NavigationProperty Name="tbl_Orders" Relationship="LocalLinkersModel.FK_tbl_Orders_tbl_Login" FromRole="tbl_Login" ToRole="tbl_Orders" />
+  </EntityType>
+  <EntityType Name="tbl_OrderDetailImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="tbl_OrderDetails" Relationship="LocalLinkersModel.FK_tbl_OrderDetailImages_tbl_OrderDetails" FromRole="tbl_OrderDetailImages" ToRole="tbl_OrderDetails" />
+  </EntityType>
+  <EntityType Name="tbl_Portfolio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateId" Type="Int64" />
+    <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="tbl_Template" Relationship="LocalLinkersModel.FK_tbl_Portfolio_tbl_Template" FromRole="tbl_Portfolio" ToRole="tbl_Template" />
+  </EntityType>
+  <EntityType Name="tbl_ProductImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="tbl_Products" Relationship="LocalLinkersModel.FK_tbl_ProductImages_tbl_Products" FromRole="tbl_ProductImages" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int64" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShortDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ActualPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Stock" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="SelectedCity" Type="Int64" />
+    <Property Name="SelectedPosition" Type="Int64" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Category" Relationship="LocalLinkersModel.FK_tbl_Products_tbl_Category" FromRole="tbl_Products" ToRole="tbl_Category" />
+    <NavigationProperty Name="tbl_Cities" Relationship="LocalLinkersModel.FK_tbl_Products_tbl_Cities" FromRole="tbl_Products" ToRole="tbl_Cities" />
+    <NavigationProperty Name="tbl_ProductImages" Relationship="LocalLinkersModel.FK_tbl_ProductImages_tbl_Products" FromRole="tbl_Products" ToRole="tbl_ProductImages" />
+    <NavigationProperty Name="tbl_SubCategory" Relationship="LocalLinkersModel.FK_tbl_Products_tbl_SubCategory" FromRole="tbl_Products" ToRole="tbl_SubCategory" />
+  </EntityType>
+  <EntityType Name="tbl_Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tbl_Services">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateId" Type="Int64" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="tbl_Template" Relationship="LocalLinkersModel.FK_tbl_Services_tbl_Template" FromRole="tbl_Services" ToRole="tbl_Template" />
+  </EntityType>
+  <EntityType Name="tbl_SubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <NavigationProperty Name="tbl_Category" Relationship="LocalLinkersModel.FK_tbl_SubCategory_tbl_Category" FromRole="tbl_SubCategory" ToRole="tbl_Category" />
+    <NavigationProperty Name="tbl_Products" Relationship="LocalLinkersModel.FK_tbl_Products_tbl_SubCategory" FromRole="tbl_SubCategory" ToRole="tbl_Products" />
+    <NavigationProperty Name="tbl_OrderDetails" Relationship="LocalLinkersModel.FK_tbl_OrderDetails_tbl_SubCategory" FromRole="tbl_SubCategory" ToRole="tbl_OrderDetails" />
+    <NavigationProperty Name="tbl_Business" Relationship="LocalLinkersModel.FK_tbl_Business_tbl_SubCategory" FromRole="tbl_SubCategory" ToRole="tbl_Business" />
+    <NavigationProperty Name="tbl_Coupons" Relationship="LocalLinkersModel.FK_tbl_Coupons_tbl_SubCategory" FromRole="tbl_SubCategory" ToRole="tbl_Coupons" />
+  </EntityType>
+  <EntityType Name="tbl_Template">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IconImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Portfolio" Relationship="LocalLinkersModel.FK_tbl_Portfolio_tbl_Template" FromRole="tbl_Template" ToRole="tbl_Portfolio" />
+    <NavigationProperty Name="tbl_Services" Relationship="LocalLinkersModel.FK_tbl_Services_tbl_Template" FromRole="tbl_Template" ToRole="tbl_Services" />
+    <NavigationProperty Name="tbl_TemplateAboutUs" Relationship="LocalLinkersModel.FK_tbl_TemplateAboutUs_tbl_Template" FromRole="tbl_Template" ToRole="tbl_TemplateAboutUs" />
+    <NavigationProperty Name="tbl_TemplateContact" Relationship="LocalLinkersModel.FK_tbl_TemplateContact_tbl_Template" FromRole="tbl_Template" ToRole="tbl_TemplateContact" />
+    <NavigationProperty Name="tbl_TemplateSliders" Relationship="LocalLinkersModel.FK_tbl_TemplateSliders_tbl_Template" FromRole="tbl_Template" ToRole="tbl_TemplateSliders" />
+  </EntityType>
+  <EntityType Name="tbl_TemplateAboutUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateId" Type="Int64" />
+    <Property Name="AboutUs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="tbl_Template" Relationship="LocalLinkersModel.FK_tbl_TemplateAboutUs_tbl_Template" FromRole="tbl_TemplateAboutUs" ToRole="tbl_Template" />
+  </EntityType>
+  <EntityType Name="tbl_TemplateContact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateId" Type="Int64" />
+    <Property Name="TumblarLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FaceBookLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GoogleLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TwitterLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PinInterestLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Template" Relationship="LocalLinkersModel.FK_tbl_TemplateContact_tbl_Template" FromRole="tbl_TemplateContact" ToRole="tbl_Template" />
+  </EntityType>
+  <EntityType Name="tbl_TemplateSliders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="tbl_Template" Relationship="LocalLinkersModel.FK_tbl_TemplateSliders_tbl_Template" FromRole="tbl_TemplateSliders" ToRole="tbl_Template" />
+  </EntityType>
+  <EntityType Name="tbl_UserPoints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="Points" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="OrderId" Type="Int64" />
+    <NavigationProperty Name="tbl_Login" Relationship="LocalLinkersModel.FK_tbl_UserPoints_tbl_Login" FromRole="tbl_UserPoints" ToRole="tbl_Login" />
+  </EntityType>
+  <Association Name="FK_tbl_Products_tbl_Category">
+    <End Type="LocalLinkersModel.tbl_Category" Role="tbl_Category" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Products" Role="tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SubCategory_tbl_Category">
+    <End Type="LocalLinkersModel.tbl_Category" Role="tbl_Category" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_SubCategory" Role="tbl_SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_SubCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_Cities">
+    <End Type="LocalLinkersModel.tbl_Cities" Role="tbl_Cities" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Products" Role="tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UserPoints_tbl_Login">
+    <End Type="LocalLinkersModel.tbl_Login" Role="tbl_Login" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_UserPoints" Role="tbl_UserPoints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_UserPoints">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Portfolio_tbl_Template">
+    <End Type="LocalLinkersModel.tbl_Template" Role="tbl_Template" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Portfolio" Role="tbl_Portfolio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Portfolio">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductImages_tbl_Products">
+    <End Type="LocalLinkersModel.tbl_Products" Role="tbl_Products" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_ProductImages" Role="tbl_ProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_ProductImages">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_SubCategory">
+    <End Type="LocalLinkersModel.tbl_SubCategory" Role="tbl_SubCategory" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Products" Role="tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Services_tbl_Template">
+    <End Type="LocalLinkersModel.tbl_Template" Role="tbl_Template" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Services" Role="tbl_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Services">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TemplateAboutUs_tbl_Template">
+    <End Type="LocalLinkersModel.tbl_Template" Role="tbl_Template" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_TemplateAboutUs" Role="tbl_TemplateAboutUs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_TemplateAboutUs">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TemplateContact_tbl_Template">
+    <End Type="LocalLinkersModel.tbl_Template" Role="tbl_Template" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_TemplateContact" Role="tbl_TemplateContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_TemplateContact">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TemplateSliders_tbl_Template">
+    <End Type="LocalLinkersModel.tbl_Template" Role="tbl_Template" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_TemplateSliders" Role="tbl_TemplateSliders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_TemplateSliders">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_BusinessBooking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="BusinessId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="BookingDate" Type="DateTime" Precision="3" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Login" Relationship="LocalLinkersModel.FK_tbl_BusinessBooking_tbl_Login" FromRole="tbl_BusinessBooking" ToRole="tbl_Login" />
+    <NavigationProperty Name="tbl_Business" Relationship="LocalLinkersModel.FK_tbl_BusinessBooking_tbl_Business" FromRole="tbl_BusinessBooking" ToRole="tbl_Business" />
+  </EntityType>
+  <Association Name="FK_tbl_BusinessBooking_tbl_Login">
+    <End Type="LocalLinkersModel.tbl_Login" Role="tbl_Login" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_BusinessBooking" Role="tbl_BusinessBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_BusinessBooking">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_GetDistance_Business_Result9">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result10">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="MESSAGE" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Business_Result11">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="MESSAGE" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="tbl_OrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int64" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActualPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PayToMerchant" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CouponPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OfferDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TermsAndCondition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SelectedPosition" Type="Int64" />
+    <Property Name="SelectedCity" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CouponMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int64" />
+    <Property Name="UniqueId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Category" Relationship="LocalLinkersModel.FK_tbl_OrderDetails_tbl_Category" FromRole="tbl_OrderDetails" ToRole="tbl_Category" />
+    <NavigationProperty Name="tbl_Cities" Relationship="LocalLinkersModel.FK_tbl_OrderDetails_tbl_Cities" FromRole="tbl_OrderDetails" ToRole="tbl_Cities" />
+    <NavigationProperty Name="tbl_OrderDetailImages" Relationship="LocalLinkersModel.FK_tbl_OrderDetailImages_tbl_OrderDetails" FromRole="tbl_OrderDetails" ToRole="tbl_OrderDetailImages" />
+    <NavigationProperty Name="tbl_SubCategory" Relationship="LocalLinkersModel.FK_tbl_OrderDetails_tbl_SubCategory" FromRole="tbl_OrderDetails" ToRole="tbl_SubCategory" />
+  </EntityType>
+  <Association Name="FK_tbl_OrderDetails_tbl_Category">
+    <End Type="LocalLinkersModel.tbl_Category" Role="tbl_Category" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_OrderDetails" Role="tbl_OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetails">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrderDetails_tbl_Cities">
+    <End Type="LocalLinkersModel.tbl_Cities" Role="tbl_Cities" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_OrderDetails" Role="tbl_OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetails">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrderDetailImages_tbl_OrderDetails">
+    <End Type="LocalLinkersModel.tbl_OrderDetails" Role="tbl_OrderDetails" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_OrderDetailImages" Role="tbl_OrderDetailImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrderDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetailImages">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrderDetails_tbl_SubCategory">
+    <End Type="LocalLinkersModel.tbl_SubCategory" Role="tbl_SubCategory" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_OrderDetails" Role="tbl_OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_OrderDetails">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_GetDistance_Coupons_Result7">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CouponMessage" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="view_Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int64" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShortDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ActualPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Stock" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="SelectedCity" Type="Int64" />
+    <Property Name="SelectedPosition" Type="Int64" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Double" />
+    <Property Name="SNO" Type="Int64" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SubCategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CityName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="sp_GetDistance_Products_Result3">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ShortDescription" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Stock" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tbl_Business">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int64" />
+    <Property Name="BusinessName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="Latitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SelectedCity" Type="Int64" />
+    <Property Name="Subscription" Type="Int64" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="PremiumImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Category" Relationship="LocalLinkersModel.FK_tbl_Business_tbl_Category" FromRole="tbl_Business" ToRole="tbl_Category" />
+    <NavigationProperty Name="tbl_Cities" Relationship="LocalLinkersModel.FK_tbl_Business_tbl_Cities" FromRole="tbl_Business" ToRole="tbl_Cities" />
+    <NavigationProperty Name="tbl_SubCategory" Relationship="LocalLinkersModel.FK_tbl_Business_tbl_SubCategory" FromRole="tbl_Business" ToRole="tbl_SubCategory" />
+    <NavigationProperty Name="tbl_BusinessBooking" Relationship="LocalLinkersModel.FK_tbl_BusinessBooking_tbl_Business" FromRole="tbl_Business" ToRole="tbl_BusinessBooking" />
+    <NavigationProperty Name="tbl_BusinessImages" Relationship="LocalLinkersModel.FK_tbl_BusinessImages_tbl_Business" FromRole="tbl_Business" ToRole="tbl_BusinessImages" />
+  </EntityType>
+  <Association Name="FK_tbl_Business_tbl_Category">
+    <End Type="LocalLinkersModel.tbl_Category" Role="tbl_Category" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Business" Role="tbl_Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Business">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Business_tbl_Cities">
+    <End Type="LocalLinkersModel.tbl_Cities" Role="tbl_Cities" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Business" Role="tbl_Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Business">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Business_tbl_SubCategory">
+    <End Type="LocalLinkersModel.tbl_SubCategory" Role="tbl_SubCategory" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Business" Role="tbl_Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Business">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BusinessBooking_tbl_Business">
+    <End Type="LocalLinkersModel.tbl_Business" Role="tbl_Business" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_BusinessBooking" Role="tbl_BusinessBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_BusinessBooking">
+        <PropertyRef Name="BusinessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BusinessImages_tbl_Business">
+    <End Type="LocalLinkersModel.tbl_Business" Role="tbl_Business" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_BusinessImages" Role="tbl_BusinessImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_BusinessImages">
+        <PropertyRef Name="BusinessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_GetDistance_Business_Result12">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="MESSAGE" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="PremiumImage" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="tbl_Coupons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int64" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActualPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PayToMerchant" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CouponPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OfferDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TermsAndCondition" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SelectedPosition" Type="Int64" />
+    <Property Name="SelectedCity" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CouponMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int64" />
+    <Property Name="UniqueId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAsPerBill" Type="Boolean" />
+    <NavigationProperty Name="tbl_Category" Relationship="LocalLinkersModel.FK_tbl_Coupons_tbl_Category" FromRole="tbl_Coupons" ToRole="tbl_Category" />
+    <NavigationProperty Name="tbl_Cities" Relationship="LocalLinkersModel.FK_tbl_Coupons_tbl_Cities" FromRole="tbl_Coupons" ToRole="tbl_Cities" />
+    <NavigationProperty Name="tbl_CouponImages" Relationship="LocalLinkersModel.FK_tbl_CouponImages_tbl_Coupons" FromRole="tbl_Coupons" ToRole="tbl_CouponImages" />
+    <NavigationProperty Name="tbl_SubCategory" Relationship="LocalLinkersModel.FK_tbl_Coupons_tbl_SubCategory" FromRole="tbl_Coupons" ToRole="tbl_SubCategory" />
+  </EntityType>
+  <EntityType Name="view_Business">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="CategoryName" />
+      <PropertyRef Name="UserMessage" />
+      <PropertyRef Name="ButtonTitle" />
+      <PropertyRef Name="SubCategoryName" />
+      <PropertyRef Name="Subscription" />
+      <PropertyRef Name="Message" />
+      <PropertyRef Name="Image" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PremiumImage" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int64" />
+    <Property Name="BusinessName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="Latitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Double" />
+    <Property Name="SNO" Type="Int64" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserMessage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ButtonTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SubCategoryName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SelectedCity" Type="Int64" />
+    <Property Name="CityName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Subscription" Type="Int64" Nullable="false" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="PremiumImage" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_Coupons">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TermsAndCondition" />
+      <PropertyRef Name="IsAsPerBill" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="CategoryId" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int64" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActualPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PayToMerchant" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CouponPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OfferDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TermsAndCondition" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int64" />
+    <Property Name="UniqueId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CouponMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SelectedPosition" Type="Int64" />
+    <Property Name="SelectedCity" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="SNO" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="Distance" Type="Double" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SubCategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CityName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsAsPerBill" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_Coupons_tbl_Category">
+    <End Type="LocalLinkersModel.tbl_Category" Role="tbl_Category" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Coupons" Role="tbl_Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Coupons">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Coupons_tbl_Cities">
+    <End Type="LocalLinkersModel.tbl_Cities" Role="tbl_Cities" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Coupons" Role="tbl_Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Coupons">
+        <PropertyRef Name="SelectedCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CouponImages_tbl_Coupons">
+    <End Type="LocalLinkersModel.tbl_Coupons" Role="tbl_Coupons" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_CouponImages" Role="tbl_CouponImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Coupons">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_CouponImages">
+        <PropertyRef Name="CouponId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Coupons_tbl_SubCategory">
+    <End Type="LocalLinkersModel.tbl_SubCategory" Role="tbl_SubCategory" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Coupons" Role="tbl_Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Coupons">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_GetDistance_Business_Result13">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="MESSAGE" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="PremiumImage" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDistance_Coupons_Result8">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CouponMessage" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="true" />
+    <Property Type="Boolean" Name="IsAsPerBill" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="tbl_Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddressId" Type="Int64" />
+    <Property Name="TrackingId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfferType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OfferCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReedemPoints" Type="Int64" />
+    <NavigationProperty Name="tbl_Login" Relationship="LocalLinkersModel.FK_tbl_Orders_tbl_Login" FromRole="tbl_Orders" ToRole="tbl_Login" />
+    <NavigationProperty Name="tbl_OrderAddress" Relationship="LocalLinkersModel.FK_tbl_Orders_tbl_OrderAddress" FromRole="tbl_Orders" ToRole="tbl_OrderAddress" />
+    <NavigationProperty Name="tbl_Order_Product_Mapping" Relationship="LocalLinkersModel.FK_tbl_Order_Product_Mapping_tbl_Orders" FromRole="tbl_Orders" ToRole="tbl_Order_Product_Mapping" />
+  </EntityType>
+  <Association Name="FK_tbl_Orders_tbl_Login">
+    <End Type="LocalLinkersModel.tbl_Login" Role="tbl_Login" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Orders" Role="tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_OrderAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentMode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrackingId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BankReferenceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BillingState" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingZip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryState" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryZip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="OrderId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Orders" Relationship="LocalLinkersModel.FK_tbl_Orders_tbl_OrderAddress" FromRole="tbl_OrderAddress" ToRole="tbl_Orders" />
+  </EntityType>
+  <Association Name="FK_tbl_Orders_tbl_OrderAddress">
+    <End Type="LocalLinkersModel.tbl_OrderAddress" Role="tbl_OrderAddress" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Orders" Role="tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrderAddress">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_Order_Product_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int64" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsApprovedByAdmin" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Quantity" Type="Int64" />
+    <Property Name="OriginalProductId" Type="Int64" />
+    <NavigationProperty Name="tbl_Orders" Relationship="LocalLinkersModel.FK_tbl_Order_Product_Mapping_tbl_Orders" FromRole="tbl_Order_Product_Mapping" ToRole="tbl_Orders" />
+  </EntityType>
+  <Association Name="FK_tbl_Order_Product_Mapping_tbl_Orders">
+    <End Type="LocalLinkersModel.tbl_Orders" Role="tbl_Orders" Multiplicity="0..1" />
+    <End Type="LocalLinkersModel.tbl_Order_Product_Mapping" Role="tbl_Order_Product_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Order_Product_Mapping">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_GetBusinessListingByDistance_Result">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="Subscription" Nullable="true" />
+    <Property Type="String" Name="MESSAGE" Nullable="true" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserMessage" Nullable="true" />
+    <Property Type="String" Name="ButtonTitle" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="PremiumImage" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_GetCouponListingByDistance_Result">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PayToMerchant" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CouponPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OfferDetails" Nullable="true" />
+    <Property Type="String" Name="TermsAndCondition" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CouponMessage" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="true" />
+    <Property Type="Boolean" Name="IsAsPerBill" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_GetProductListingByDistance_Result">
+    <Property Type="Int64" Name="SNO" Nullable="true" />
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int64" Name="CategoryId" Nullable="true" />
+    <Property Type="Int64" Name="SubCategoryId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ShortDescription" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SalePrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Stock" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsApprovedByAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Int64" Name="SelectedCity" Nullable="true" />
+    <Property Type="Int64" Name="SelectedPosition" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Image" Nullable="true" />
+  </ComplexType>
+</Schema>

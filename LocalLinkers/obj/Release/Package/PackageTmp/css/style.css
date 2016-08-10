@@ -1,0 +1,755 @@
+﻿@charset "utf-8";
+/* CSS Document */
+@font-face { 	font-family: 'Kollektif';	src: url(../fonts/Kollektif.ttf); }
+@font-face { 	font-family: 'RobotoCondensedLight';	src: url(../fonts/RobotoCondensedLight.ttf); } 
+@font-face { 	font-family: 'robotoregular';	src: url(../fonts/RobotoCondensedRegular.ttf); }
+
+.top-header {background:#000; width:100%; float:left; padding: 5px 0;}
+.left-bar {width:20%; float:left;}
+.left-bar > p { color: #fff;  margin: 0; }
+.right-bar {width:128px; float:right;}
+.login {width:auto; float:right;}
+.login ul{list-style:none; padding:0; margin:2px 0 0; }
+.login ul li{display:inline; }
+.login ul li a{text-decoration:none; color:#fff; border-right: 1px solid #ffffff; padding:0 18px; font-family: robotoregular; }
+.login ul li:last-child a {border:none; padding: 0 8px;}
+.searchcity .btn-danger { background: transparent none repeat scroll 0 0; }
+
+.linkmobileapp {width:27%; float:right;}
+.linkmobileapp ul{list-style:none; float:right; margin:0; padding: 0px 0px 0;}
+.linkmobileapp ul li {display:inline; flaot:left; margin: 0 2px 0 4px; float:left; }
+.linkmobileapp ul li a{text-decoration:none; color:#fff; padding:0 5px; float:left;  margin: 2px 0 0;  font-family: robotoregular; }
+.linkmobileapp ul li a:hover{ color:#9f183b;}
+.linkmobileapp img {float: left; height: 21px; margin: 2px 0 0; padding: 0; width: 20px; }
+
+.headerDiv {background:#fff; width:100%; float:left;}
+.logo {width:29%; float:left;}
+.navigation {width:auto; float:right;}
+.navigation ul{list-style:none; float:right; margin:0; padding: 6px 0px 0;}
+.navigation ul li {display:inline; flaot:left; margin: 0 0px 0 4px; float:left; }
+.navigation ul li a{text-decoration:none; color:#333333; padding:0 0px; float:left;  margin: 3px 0 0; }
+.navigation ul li a:hover{ color:#9f183b;}
+.navigation img {padding: 0 0px; float: left; }
+
+.banner {width: 100%; float: left; }
+.banner img {width: 100%; border-radius: 2px; border: 1px solid #ddd; }
+
+.category {width:100%; /*background:#fff;*/ float:left; padding:15px;}
+.category ul{width:80%; float:left; list-style:none; margin:3px 0 0 ; padding: 0;}
+/*.category ul li {display:inline;}*/
+/*.category ul li a{text-decoration:none; color:#333333; padding:0  25px 0 0; } */
+ .category._nvi img:hover { border-bottom: 1px solid red; transform:scale(1.2); -webkit-transform:scale(1.2); }
+.category._nvi img { transition: all 0.7s ease; border-bottom: 1px solid #fff;  -webkit-transition: all 0.7s ease; }
+
+.view {width:20%; float:left; /*padding: 15px 0 0;*/}
+.view p a{font-size: 20px; margin: 0;}
+
+.hotdeal {width:100%; background:#f2f2f2; float:left; padding:15px;} 
+.hotdeal h3 {margin: 0; font-size: 25px; font-weight: 600; }
+.hotdeal h3 span {color: #841633;    font-family: robotoregular; }
+
+.recomended {width:100%; float:left; margin: 15px 0; border: 1px solid #cccccc; }
+.recomended-left {position: relative; width:40%; background:url(../images/recomendation.jpg) no-repeat; float:left; min-height: 275px;}
+.recomended-button {border: medium none; position: absolute; right: 165px; top:100px; border-radius:15px; box-shadow: 0 0 1px 1px #aaa; padding: 15px 0; width: 160px; }
+
+.recomended-right {width:60%; float:left; padding: 25px;}
+.recomended-right p{font-size:18px; color:#41acff; margin:0;}
+.recomended-right p img {padding: 0 12px 0 0; }
+.recomended-right h5 {color:#aaa; font-size: 16px; font-weight: 600; margin:0;}
+
+.recomended-right ul{list-style:none; padding:0; margin:60px 0 0; }
+.recomended-right ul li{display:inline; }
+.recomended-right ul li a{text-decoration:none; color:#333; padding: 0 20px 0 0; line-height:20px;}
+.recomended-right img { padding: 0 12px 0 0; }
+
+.section {background:#fff; width:100%; float:left;}
+.section-left {width:50%; float:left;}
+.section-one {width:98%; float:left; border: 1px solid #cccccc;}
+.section-one > img {width: 100%;}
+.section-one p {font-size: 12px; margin:0; padding: 8px 10px 0; }
+.section-one > h4 {margin: 0; padding:8px 10px 0;}
+.section-one > h5 {font-size:12px; padding: 5px 10px; margin:0; line-height: 18px;}
+
+
+.section-right {width:50%; float:left;}
+.section-two {width:98%; float:left; margin: 0 0 0 12px;}
+.section-two {width:98%; float:left; border: 1px solid #cccccc;}
+.section-two > img {width: 100%;}
+.section-two p {font-size: 12px; margin:0; padding: 8px 10px 0; }
+.section-two > h4 {margin: 0; padding:8px 10px 0;}
+.section-two > h5 {font-size:12px; padding: 5px 10px; margin:0; line-height: 18px;}
+
+
+/* Start footer_down from here */
+
+
+.footer_down {background:#8b2740; width:100%; float:left; padding: 20px 0;}
+.company h4 {color: #ffffff; text-align: center; font-family: robotoregular;}
+.company {width:33.33%; float:left;} 
+.company ul{list-style:none; margin:0; padding:0; text-align: center;} 
+.company ul li{display:block; }
+.company ul li a{color:#aaa; text-decoration:none; padding:0 10px; font-size: 13px; font-weight: 600; line-height: 25px;}
+.company ul li a:hover { color: #fff; }
+
+.happy-people {background:#8b2740; width:100%; float:left; /*padding: 20px 0;*/}
+.happy-people h4 {color: #ffffff; text-align: center; font-family: robotoregular;}
+.happy-people {width:33.33%; float:left;} 
+.happy-people ul{list-style:none; margin:0; padding:0; text-align: center;} 
+.happy-people ul li{display:block; }
+.happy-people ul li a{color:#aaa; text-decoration:none; padding:0 10px; font-size: 13px; font-weight: 600; line-height: 25px;}
+ .happy-people ul li a:hover{ color:#fff;}
+  
+  /* End footer_down from here */
+  
+  
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Middel Div here +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/  
+  
+.midel_div { float: left; width: 100%; }  
+div.cardpage{  margin: 10px 0 0; padding: 0; }
+.cardddiv { float: left; width:100%; } 
+
+.cardddiv .fstclass{ padding: 0px 15px 0px 0px;}
+.cardddiv .scndclass{ padding: 0px 0px 0px 15px;}
+
+.cardddiv .fstsmall{ padding: 0px 15px 0px 0px;}
+.cardddiv .scndsmal{ padding: 0px 0px 0px 15px;}
+
+.cardddiv .fstsame{ padding: 0px 15px 0px 0px;}
+.cardddiv .scndsame{ padding: 0px 0px 0px 15px;}
+
+  
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Middel Div here +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/    
+  
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start RedSpace Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/   
+  
+.redspace { background: #fff none repeat scroll 0 0; float: left; height: auto; width: 100%;  margin: 12px 0; } 
+.red_space { background: #555 none repeat scroll 0 0; height: auto; margin: 10px auto 10px; text-align: center; width: 64%; }  
+  
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End RedSpace Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/  
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Strat Dealslist Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/        
+  
+.Dealslist { float: left; height: auto; width: 100%; }
+.editdescription { height: 20px; overflow: hidden; font-family: robotoregular; }
+.scrollbackgrund { background: #f2f2f2 none repeat scroll 0 0; margin: 0 0 15px; }
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Dealslist Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/     
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Strat city_deals Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/  
+
+.city_deals { background: #fff none repeat scroll 0 0; float: left; height: auto; width: 100%; margin: 12px 0 0; }
+#flexiselDemo2 .content { padding: 0; }
+#flexiselDemo2 .title { padding: 0 18px; font-size: 14px; line-height: 18px; font-family: robotoregular; }
+#flexiselDemo2 .image img { padding: 0 12px; }
+
+.nbs-flexisel-container .nbs-flexisel-nav-left { left: -18px; background: #ddd none repeat scroll 0 0; }
+.nbs-flexisel-container .nbs-flexisel-nav-left:hover { background: #444 none repeat scroll 0 0; color:#fff }
+
+.nbs-flexisel-container .nbs-flexisel-nav-right {  right: -18px; background: #ddd none repeat scroll 0 0; }
+.nbs-flexisel-container .nbs-flexisel-nav-right:hover { background: #444 none repeat scroll 0 0; color:#fff }
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End city_deals Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/  
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start local_shops Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/  
+
+.local_shops { float: left; margin: 0px 0; width: 100%; }
+ .local_shops .hotdeal {  margin: 0 0 10px; } 
+ 
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End local_shops Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start paying_us Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+div.paying_us { background: #f1f1f1 none repeat scroll 0 0; float: left; width: 100%; }
+.card_ceta > li { float: left; list-style: outside none none; margin: 0 7px; }
+.app_series { font-size: 25px; text-align: right; font-family: robotoregular; margin: 4px 0 0; }
+.app_series .fa.fa-apple { color: #666; transition: all 0.7s ease;  -webkit-transition: all 0.7s ease; }
+.app_series .fa.fa-apple:hover { color: #444; transform:scale(1.2); -webkit-transform:scale(1.2); }
+
+/*.app_series .fa.fa-android { color: #b3cd4b; margin: 0 0 0 5px; transition: all 0.7s ease;  -webkit-transition: all 0.7s ease; }
+.app_series .fa.fa-android:hover { color: #8ba134; margin: 0 0 0 5px; transform:scale(1.2); -webkit-transform:scale(1.2); }*/
+
+.app_series .fa.fa-android { color: #b3cd4b; margin: 0 0 0 5px; transition: transform 1s;     }
+.app_series .fa.fa-android:hover { color: #8ba134; margin: 0 0 0 5px; transform: rotate(1080deg) scale(1.6) ;  }
+
+
+.black_lineborder { border: 1px solid #ddd; margin: 20px auto;  width: 95%; display:none; }
+.finduson { display: none; }
+.card_ceta { float: left; margin: 7px 0 0; }
+
+.card_ceta img { transition: all 0.7s ease; -webkit-transition: all 0.7s ease; }
+.card_ceta img:hover {  transform:scale(1.2); -webkit-transform:scale(1.6); }
+
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End paying_us Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+.searchcity { /*background: #ddd;*/ float: left; height: auto; width: 100%; border: 1px solid #ccc; margin: 0 0 7px;  border-radius: 1px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.23); }
+
+div .serchwidth {  background: transparent none repeat scroll 0 0; border: medium none; border-radius: 0; float: left;  width:  22.61%;; }
+div .serchfield { background: #f2f2f2 none repeat scroll 0 0; border: medium none; border-radius: 0; }
+.searchcity .form-control::-moz-placeholder { color: #666; } 
+.searchcity .btn.btn-danger { border: medium none; color: #000; } 
+ .locationsearch { float: left; margin: 7px 0 0 9px; } .serchicon > img { height: 22px; }
+.serchicon { float: left; height: 22px; }
+
+.searchcity .serchwidth:focus { background-color: transparent !important; border: none !important; }
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start cetaiconList Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+.cetaiconList { float: left; width: 100%; margin: 20px 0}
+.cetaiconList2 { border-radius: 2px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.23); float: left; margin: 3px 0; padding: 15px 0; width: 100%; }
+/*.imageki { border: 1px solid #fff; float: left; margin: 0 6px 9px 8px; text-align: center; width: 78px; }*/
+.imageki {  float: left; margin: 0 6px 14px 8px; text-align: center; width: 171px; height:125px;  background: #fff none repeat scroll 0 0;   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.23);   }
+.imageki:hover {   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.53); }  
+
+.imgview { float: left; margin: 7px 0; width: 100%; }
+.imgview img { margin: 0 0 3px;  opacity: 0.65; }
+.imageki:hover .imgview img { opacity: 1; }
+.imgview > a { color: #8b2740; font-size: 15px; font-weight: bold; }
+.imgview a:hover { color: #8b2740; }
+
+.iconmain { background: #f1f1f1 none repeat scroll 0 0; border-radius: 2px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.33); float: left; margin: 0 0 9px; width: 100%; }
+.iconclr { background: #8b2740 none repeat scroll 0 0; float: left; height: 50px; width: 70px; text-align:center; }
+
+.iconclr .fa { color: #fff; float: left; font-size: 40px; margin: 7px 0 0; width: 100%; }
+.iconmain h2 { color: #8b2740; float: left; font-size: 30px; margin: 7px 0 0 20px;  font-family: robotoregular; }
+.iconclr > img {
+    margin: 8px 0 0 1px;
+}
+
+.cetaiconList2 .imageki:nth-child(12n+1) {  clear: both;}
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End cetaiconList Css +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+/**---------------------------------------------------------------- Start Cetagory Page Css ----------------------------------------------------------------**/ 
+
+.category_detail { float: left; width: 100%; }
+.colClasses { /*background: #f1f1f1 none repeat scroll 0 0;*/ float: left; margin: 7px 0; padding: 13px 0 6px 13px; width: 100%; } 
+
+.cetaNavList { border: 1px solid #ddd;   box-shadow: 0 1px 4px rgba(139, 39, 64, 0.43); background:#fff;  border-radius: 2px; margin: 0 0 10px; }
+.cetaNavList h6 { font-weight: 600; margin: 20px 0; }
+
+div.cetacoll { background: #fff none repeat scroll 0 0; border-radius: 2px; box-shadow: 0 2px 4px rgba(139, 39, 64, 0.43); height: auto; margin: 0 0 10px; padding: 0px; }
+div .cetacoll .description {  float: left; font-family: robotoregular; font-size: 15px; margin: 7px 0 0; min-height: 75px; width: 100%; }
+.cardcetalist1 .category { padding: 0;}
+
+.lolocater { float: left; width: 100%; }
+.lolocater > p { float: left; }
+.lolocater > a { background: #98004a none repeat scroll 0 0; color: #fff; float: right; margin: 0; padding: 10px 30px; border-radius:1px; }
+
+.lolocater > a:hover { background: #98004a none repeat scroll 0 0; color: #fff; float: right; }
+.cardcetalist1 .text-info { color: #444 !important; font-family: robotoregular; font-size: 17px !important; }
+
+.hoHoverImg { background: rgba(139, 39, 64, 0.39) none repeat scroll 0 0; position: absolute; width: 120px; text-align:center; z-index: 1; display:none; }
+.hoHoverImg .fa-thumbs-up {    color: #fff; font-size: 22px; margin: 2px 0 0;}
+.hoHoverImg > p { color: #fff; font-size: 11px; text-align: center; font-family: robotoregular; }
+.cetacoll .card { box-shadow: none; margin: 0; }
+.hoHoverImg_right {  background: rgba(139, 39, 64, 0.49) none repeat scroll 0 0; position: absolute; right: 17px; width: 52px; z-index: 1; display:none; }
+.hoHoverImg_right .fa { color: #fff; font-size: 33px; margin: 9px 0 9px 15px; }
+.cardcetalist1 .title { font-family: robotoregular; }
+.lolocater span { color: #98004a; }
+div .cetaNavList .panel-scroll { height: auto; overflow: hidden; }
+
+.colClasses .card-plain { font-family: robotoregular; }
+.colClasses .title { font-family: robotoregular; }
+.colClasses .fa-refresh { color: #333; font-size: 17px; }
+div .colClasses .image { border-radius: 2px 0 0 2px;}
+
+div .appr_ryt { float: left; }
+div .appr_lft { color: #555 !important; float: right; margin: 8px 0 0;}
+
+div .btnloadclr .btn {  background: #8b2740 none repeat scroll 0 0;  border: 1px solid #8b2740; border-radius: 2px !important; color: #fff; margin: 25px 0 10px; opacity: 1; text-shadow: none; }
+.btnloadclr .btn-morphing span, .btn-morphing svg{  top: 18px !important; }
+.btnloadclr .btn-morphing .circle-gray { stroke: #8b2740; }
+
+.col-md-3.btnloadclr { float: none; margin: 0 auto; }
+
+/**---------------------------------------------------------------- End Cetagory Page Css ----------------------------------------------------------------**/ 
+
+/**---------------------------------------------------------------- Start Couponlist Page Css ----------------------------------------------------------------**/ 
+
+.Couponlist .card .content { padding: 4px 10px 1px; }
+.couponprice { color: #333; font-size: 13px;   margin: 0 0 3px; display: inline-block; }
+.couponprice span { color: #8b2740; font-weight: 500; font-size:16px; font-family: robotoregular; }
+.Couponlist .card .title { height: 30px; overflow: hidden; margin: 0 0 4px;}
+.adrescoupon { margin: 0 0 2px; }
+.adrescoupon .fa-map-marker { color: #8b2740; font-size: 21px; text-align: left; width: auto; }
+
+/**---------------------------------------------------------------- End Couponlist Page Css ----------------------------------------------------------------**/ 
+
+/**---------------------------------------------------------------- Start FooterBlack Page Css ----------------------------------------------------------------**/ 
+
+.footerBlack { background: #8b2740  none repeat scroll 0 0;    border-top: 1px solid #77132c; float: left; height: 40px; width: 100%; }
+.footerTtext { margin: 9px 0 0; color: #fff; font-family: robotoregular;  float: right; }
+.footerTtext .glyphicon.glyphicon-heart { color: #fe6e3a; }
+.footeink { color: #fff; }
+.footeink:hover { color: #fe6e3a !important; }
+
+/**---------------------------------------------------------------- End FooterBlack Page Css ----------------------------------------------------------------**/ 
+
+/**---------------------------------------------------------------- Start formfieldpage Page Css ----------------------------------------------------------------**/ 
+
+.formfieldpage { float: left; width: 100%; background:url(../images/log_inPage.jpg) no-repeat; }
+.fg_socialpassword { color: #555; float: left; font-size: 16px; margin: 9px 0 30px 13px; }
+.formfieldpage button { background: #8b2740 none repeat scroll 0 0; border: 1px solid #8b2740; font-family: robotoregular;  border-radius: 2px; }
+.formfieldpage button:hover { background: #8b2740 none repeat scroll 0 0; }
+.formfieldpage .card { border-radius: 2px !important; }
+.formfieldpage .header.text-center { font-family: robotoregular; }
+
+/**---------------------------------------------------------------- End formfieldpage Page Css ----------------------------------------------------------------**/
+
+.fa-whatsapp::before { content: ""; }
+div .ddbtn { float: left;  margin: 0 10px 0 11px; min-width: 143px !important; width: 100px !important; }
+div .login-page > .content, .lock-page > .content.contentwidth { padding-top: 13vh; }
+.card .category, .card .form-group label { color: #888888; font-size: 14px; font-weight: 400; margin-bottom: 0; }
+.classdiv .form-control { height: 44px; }
+.divfoot .btn-wd { height: 42px; margin: 0 10px 0 2px;  min-width: 120px !important; }
+.divfoot .pull-right { float: left !important; }
+
+/**---------------------------------------------------------------- Start Coupon Page Css ----------------------------------------------------------------**/
+
+.couponDeal { background: #d1d1d1 none repeat scroll 0 0; float: left; height: auto; width: 100%; }
+.cou_poncolor{ background:#fff; height:auto; float:left; width:100%;  margin: 0px 0 0;     box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.43);}
+div .coupnimages { margin: 14px 0; }
+
+.coupnimages .item > img { height: 400px !important; width: 100%; } 
+.abhold { box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.43); margin:10px auto 0; position: relative; width: 1170px; z-index: 999; }
+
+.abhold-text { background: #fff none repeat scroll 0 0; margin: 2px 0 0; padding: 10px 15px; }
+.abhold-text h3 { font-size: 25px;  margin: 0 !important; padding: 0; }
+
+div .bredadcrumpcolor { background-color: transparent; border-radius: 0;  margin: 6px 0 0; }
+.breadcrumb > li + li::before { color: #444; content: "/ "; padding: 0 5px; }
+.breadcrumb.bredadcrumpcolor a { color: #555; }
+.coupntext { border: 1px solid #ccc; float: left; margin: 15px 0; width: 100%; }
+.coupntext h2 { background: #8b2740 none repeat scroll 0 0; color: #fff; float: left; margin: 0 0 10px; padding: 5px; text-align: center; width: 100%; }
+.toptextdiv { margin: 7px 0; }
+
+.btn-default { background-image: linear-gradient(to bottom, #fff 0px, #e0e0e0 100%);  background-repeat: repeat-x; border-color: #ccc; text-shadow: 0 1px 0 #fff; }
+.centercoupon { background: #f2f2f2 none repeat scroll 0 0; border: 1px solid #ddd; float: left; margin: 0 0 20px; width: 100%; }
+.centercoupon > h2 {  background: #8b2740  none repeat scroll 0 0;  color: #fff; font-size: 24px; margin: 0; padding: 10px; }
+.centercoupon p { color: #4c4747; font-size: 15px; margin: 0; padding: 5px 10px; }
+.couponofr { float: left; padding: 14px 0; width: 100%; }
+.couponofr > p { margin: 3px 0;  color: #4c4747; font-size: 15px; }
+
+.couponofr li { list-style: outside none square; }
+.relpix {  height: 234px; float: left; margin: 15px 0 0;  width: 100%; }
+.relpix.pixre { height: auto; }
+.sub_pro_full img { float: left; height: 225px; width: 100%; }
+.sub_pro_full { background: #f4f4f4 none repeat scroll 0 0; float: left; height: 225px; margin: 0 0 20px;  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.23); position:relative; width:100%;}
+.sub_pro_full h2 { background: rgba(255, 255, 255, 0.88) none repeat scroll 0 0; bottom: 0px; color: #222; font-size: 19px; margin: 0; padding: 6px; position: absolute; width: 100%; } 
+.price-old { color: #dd0f0f; font-size: 14px; margin: 0 0 0 8px; text-decoration: line-through; }
+.sa_price { background: #8b2740  none repeat scroll 0 0; color: #fff; padding: 3px 0; text-align: center; }
+
+/**---------------------------------------------------------------- End Coupon Page Css ----------------------------------------------------------------**/
+
+/**---------------------------------------------------------------- Start cart Profile Page Css ----------------------------------------------------------------**/
+
+.cartprofile { background: #f2f2f2 none repeat scroll 0 0; float: left; width: 100%; }
+
+.pricebottem { float: left;  width: 100%; }
+.pricebottem > p { float: right; font-size: 20px; padding: 7px 0 5px; }
+.pricebottem span { font-size: 16px; font-weight: bold; margin: 0 5px 0 0; }
+.pricebottem > a { background: #2ca8ff none repeat scroll 0 0; border-radius: 2px; color: #fff; float: right; font-size: 14px; margin: 5px 4px 0 8px; padding: 8px 15px; }
+
+.pricebottem > a:hover { background: #109cff; color:#fff; }
+div .table-shopping > tbody > tr > td { border: medium none; }
+.table > tbody > tr {border-bottom:1px solid #ddd;  }
+
+div .table { margin-bottom: 7px; }
+
+/**---------------------------------------------------------------- End cart Profile Page Css ----------------------------------------------------------------**/
+
+
+/**---------------------------------------------------------------- Start Shoping Page Css ----------------------------------------------------------------**/
+
+.headerapp { margin: 0 !important; }
+.headerapp .fa { font-size: 24px; }
+.left.locate { float: left; padding: 0; width: 200px; margin:0; }
+.left.locate > li { color: #fff; float: left; list-style: outside none none; }
+.left.locate label { margin: 3px 0 0; font-family: robotoregular; }
+.click_dropdown { margin: 3px 0 0 2px; }
+.click_dropdown > a { background: #000 none repeat scroll 0 0; border-bottom: 4px solid #000; color: #fff; cursor: pointer; padding: 10px 5px 3px 13px ;  font-family: robotoregular;}
+
+.click_dropdown > a:hover { background: #333 none repeat scroll 0 0; border-bottom: 4px solid #ef534e; color: #fff; cursor: pointer; padding: 10px 5px 3px 13px; }
+.small-6.columns.left { padding:0;  }
+.small-6.columns.left > li { float: left; list-style: outside none none; margin: 0px 1px 0 1px; width: 100%;}
+.small-6.columns.left a { color: #636363 !important; float: left; padding: 5px 15px; width: 100%; border-left: 3px solid #fff }
+.small-6.columns.left a:hover { background:#eee; color: #636363 !important; float: left;  width: 100%; border-left: 3px solid #ef534e }
+
+/**---------------------------------------------------------------- End Shoping Page Css ----------------------------------------------------------------**/
+
+
+/**---------------------------------------------------------------- Start Mobile Nav ----------------------------------------------------------------**/
+
+
+.m_siteMenu .icont.toggle { color: #fff; font-size:18px; } 
+/*.m_siteMenu ul.menu {   background: #fff none repeat scroll 0 0; border: 1px solid #ccc; box-shadow: 3px 3px 10px #555; height: auto; left: -220px; padding: 8px 0; position: absolute; top: 50px; width: 200px; z-index: 999;
+	 transition: all 0.5s ease-in-out 0s; }
+.m_siteMenu ul.menu-open { transform: translate(220px,0px); transition:all .5s ease-in-out; }*/
+
+.m_siteMenu ul.menu { background: #8b2740 none repeat scroll 0 0; border: 1px solid #8b2740; box-shadow: 3px 3px 10px #555; height: auto; right: -205px; padding: 0px 0; position: absolute; top: 36px; width: 200px; z-index: 999;
+	 transition: all 0.5s ease-in-out 0s; }
+.m_siteMenu ul.menu-open { transform: translate(-206px,0px); transition:all .5s ease-in-out; }
+
+
+.m_siteMenu ul.menu li { display: block; width: 100%; }
+.m_siteMenu ul.menu li:hover { background: #fff ; color: #8b2740; }
+.m_siteMenu ul.menu li a { display: block; padding: 3px 10px; width: 99%; color: #fff; line-height: 2em; text-align: left;  font-size: 16px;}
+.m_siteMenu ul.menu li:hover a { color: #8b2740; }
+
+.m_siteMenu{ display:none;}
+
+/**---------------------------------------------------------------- End Mobile Nav ----------------------------------------------------------------**/
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Single Product page Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.single_pro_page{ width:100%; float:left;    padding: 20px 0;}
+.single_pro_page .tab-content img { height: auto; width: 100%; }
+.single_pro_page .nav-text { margin: 10px 0; text-align: center; }
+
+.single_pro_page .nav-text > li > a img { border-radius: 4px; height: auto; text-align: center; width: 50%; }
+.single_pro_page .nav-text > li > a { float: left; height: auto; margin: 0 auto; text-align: center; width: 100%; }
+
+/*.single_pro_page .nav-text > li > a img { border-radius: 4px; height: auto; text-align: center; width: 100%; }*/
+/* .single_pro_page .nav-text > li > a { height: auto; margin: 0 auto; width: 50%; } */
+
+.selectqty, .uiv2-already-rate-count-btn { border: 1px solid #8b2740; border-radius: 2px; float: left; height: auto; margin-right: 3px; overflow: hidden; }
+.selectqtyfield { background: #8b2740 none repeat scroll 0 0; color: #fff; float: left; font-family: robotoregular; font-size: 18px; height: auto; padding: 2px 7px 4px; width: auto; }
+.selectqty .inputqty { background: #ddd none repeat scroll 0 0; border-style: none solid; color: #000; float: left; font-size: 18px; height: 32px; text-align: center; width: 50px; font-family: robotoregular; }
+.cartprodiv .btn.btn-fill { background: #8b2740 none repeat scroll 0 0; border: 1px solid #8b2740; border-radius: 2px; color: #fff;   font-family: robotoregular; font-size: 16px; }
+.cartprodiv .btn.btn-fill:hover { background: #fff none repeat scroll 0 0; color: #8b2740; }
+
+.single_pro_page .product-details h3 { color: #8b2740; }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Single Product page Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start After login Profile page Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.after_login { float: right;  margin: 0 0 0 11px;  }
+.opndiv { padding: 0; }
+.opndiv > li { color: #fff; float: left; list-style: outside none none; margin: 3px 0 0; }
+/*.onoffdiv { background: #8b2740 none repeat scroll 0 0; float: right; padding: 0; text-indent: 9px; width: 129px;  position: absolute; display:none; }*/
+
+.onoffdiv { background: #8b2740 none repeat scroll 0 0; display: none; float: right; margin: 0 0 0 -14px; padding: 0; position: absolute; text-indent: 9px; width: 140px;z-index: 9999; }
+.opndiv > li:hover .onoffdiv { display:block; }
+.onoffdiv > li{ list-style: outside none none; }
+.opndiv > li a { border-bottom: 1px solid #bbb; color: #fff; float: left; padding: 5px 0; width: 100%; }
+.opndiv > li a:hover { color: #8b2740;  background:#fff;}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End After login Profile page Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Media Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+@media (max-width : 1280px){
+	
+.logo { float: left; margin: 0 12px 0 0; width: auto; }
+.logo img { width: 100%; }
+.navigation img { margin: 0 0 7px; }
+div .searchcity { width:85% !important;  margin: 8px 15px 10px 0 !important;}
+
+}
+
+
+
+@media (max-width : 980px){
+
+div .searchcity { width:83% !important;  margin: 8px 15px 0 0;}	
+
+}
+
+@media (max-width : 768px){
+
+.logo { float: left; margin: 0 12px 0 0; width: 28%; }
+.logo img { width: 100%; }
+.navigation img { margin: 0 0 7px; }
+
+.right-bar { display:none;}
+.linkmobileapp { display:none;}
+.m_siteMenu { display: block; float:right;}
+
+.logo { float: left; margin: 0 12px 0 0; width: auto; }
+div .searchcity {  width:65% !important;  margin: 8px 15px 0 0;}
+
+
+.tableone { display: none; }
+div .td-name.nameone { font-size: 15px; min-width: 94px; }
+div .td-number.tabletwo { font-size: 18px; min-width: 50px; }
+div .td-number.tablethree { font-size: 18px; min-width: 50px; }
+div .td-number.tablefour { font-size: 18px;  }
+
+}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Media Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Responsive Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 980px){
+
+.cardddiv .fstclass{ padding: 0px }
+.cardddiv .scndclass{ padding: 0px;}
+
+.cardddiv .fstsmall{ padding: 0px ;}
+.cardddiv .scndsmal{ padding: 0px ;}
+
+.cardddiv .fstsame{ padding: 0px ;}
+.cardddiv .scndsame{ padding: 0px ;}
+.cardddiv .nochange{ padding:0;}
+
+.category ul { height: 50px;  width: 80%; overflow:hidden}
+.midel_div .btn-lg { font-size: 12px; padding: 14px 5px; }
+
+.red_space img { width: 100%; }
+.colClasses .floatnone { float: none !important; }
+
+.about_ustextPart { margin: 25px 0 20px 1px !important; }
+}
+
+
+@media only screen and (min-device-width : 985px) and (max-device-width : 1190px){
+.category ul { height: 48px;  width: 80%; overflow:hidden}
+.midel_div .btn-lg { font-size: 12px; padding: 14px 5px; }
+.cardddiv .nochange{ padding:0;}
+
+.red_space img { width: 100%; }
+
+}
+
+@media only screen and (min-device-width : 760px) and (max-device-width : 1198px){
+.imageki {  margin: 0 6px 14px 7px; width: 138px; }
+
+}
+
+@media only screen and (min-device-width : 480px) and (max-device-width : 768px){
+.imageki { width: 46.7%; }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 479px){
+    .midel_div .btn-lg {
+    font-size: 10.5px;
+    padding: 14px 3px;
+}
+
+    div .searchcity {
+        width: 61% !important;
+    }
+.imageki { width: 100%; }
+
+.tableone { display: none; }
+/*div .td-name.nameone { font-size: 12px; min-width: 94px; }*/
+/*div .td-name.nameone {
+    font-size: 11px;
+    line-height: 64px;
+    min-width: 93px;
+    padding: 0;
+    width: 90px;
+}*/
+
+
+div .td-name.nameone {float: left;
+    font-size: 11px;
+    height: auto;
+    line-height: 13px;
+    margin: 23px 0 0;
+    max-width: 90px;
+    padding: 0;
+    white-space: normal !important;
+    width: 90px;
+    word-break: break-all;
+}
+
+/*div .td-number.tabletwo { font-size: 12px; min-width: 50px; }*/
+div .td-number.tabletwo {
+    font-size: 11px;
+    line-height: 65px;
+    margin: 0 0 0 7px;
+    min-width: 31px;
+    padding: 0; text-align: center;
+}
+
+div .td-number.tablethree { /*font-size: 12px; min-width: 50px;*/  
+    font-size: 11px;
+    line-height: 65px;
+    margin: 0 0 0 7px;
+    min-width: 31px; text-align: center;
+    padding: 0;}
+div .td-number.tablefour { 
+    font-size: 11px;
+    line-height: 65px;
+    margin: 0 0 0 7px;
+    min-width: 31px; text-align: center;
+    padding: 0; }
+div .img-container.tblimg {  display: none; }
+.table-responsive { overflow: hidden !important; }
+div .table-shopping > thead > tr > th { font-size: 10.5px; }
+
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Responsive Css ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+.hotdeal a { color: #841633; float: right; font-size: 19px; font-weight: 500; margin: 6px 0 0; transition: all 0.7s ease 0s; font-family: robotoregular; }
+.hotdeal a:hover {transform: scale(1.2); color:#333 }
+
+.category ul li {  float: left; text-align: center; width: 73px; }
+.category ul li a { color: #333333; float: left; text-decoration: none; width: 100%; }
+.category._nvi p { color: #841633; float: left; font-size: 11px; margin: 5px 0 0; text-align: center; width: 100%; }
+
+.footer_down ul { margin: 0; padding: 0; }
+.footer_down ul li { list-style: outside none none; }
+.footer_down ul li a { color: #fff; opacity: 0.6; font-family: robotoregular;  }
+.footer_down ul li a:hover { color: #fff; opacity: 1; }
+.footer_down h5 { color: #fff;    font-family: robotoregular;}
+
+.socialfootericon .btn-simple { padding: 9px 0; }
+.aboutinrtext { color: #fff; font-family: robotoregular; text-align: justify; }
+.footer_down ul li .socialapp { float: left; margin: 0 0 2px; opacity: 1; width: 100%; }
+.socialapp > img { border: 1px solid #7b8a97; border-radius: 9px; }
+.socialapp > img:hover { border: 1px solid #ddd; }
+.footer_down address { color: #fff;   font-size: 15px;}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Thanks Page Css 15-2-2015 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.ThanksPage{ float:left; width:100%; margin: 25px 0 55px; }
+.ThanksPage h2 { background: #8b2740 none repeat scroll 0 0; color: #fff; float: left; font-size: 20px; padding: 25px 0; text-align: center; width: 100%; }
+
+.orderthanku { border-top: 1px solid #ccc; float: left; margin: 18px 0; padding: 25px 0 5px; text-align: center; width: 100%; }
+.orderthanku h6 { color: #454545; font-size: 16px; }
+.orderthanku span { color: #8b2740; font-size: 18px; }
+
+.orderdetail { float: left; height: auto; margin: 15px 0; text-align: center; width: 100%; }
+
+.innerorderdetail { background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #fff 0px, #f3f2eb 100%) repeat scroll 0 0; border: 1px solid #f4f4f4; height: auto; margin: auto; width: 70%; padding: 35px 25px 26px; ; 
+ overflow:hidden; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.23); }
+.innerorderdetail p { color: #555; line-height: 25px; text-align: center; font-size:16px; }
+.innerorderdetail a { color: #8b2740; font-size: 18px; font-weight: 600; }
+
+.continueorder {  float: left; height: 42px; margin: 20px 0 0; width: 100% }
+.continueorder a { background: #8b2740 none repeat scroll 0 0; border-radius: 3px; color: #fff; padding: 10px 40px; text-align: center; }
+.continueorder a:hover { color: #fff; /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.53);*/ box-shadow:2px 15px 8px -10px #222533; }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Thanks Page Css 15-2-2015 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start App Store Page Css 18-2-2015 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.appStore{  box-shadow: 0 0 20px rgba(132, 126, 133, 0.2) !important; float: left; height: auto; width: 100%; padding: 40px 0 0; }
+.appStore .container .headings { margin: 94px 0 0; padding: 10px; text-align: center; width: 100%; float:left; }
+.basetext { font-family: "robotoregular";  text-transform: uppercase;   color: #8b2740 ; font-size:53px;  word-spacing: 10px; font-weight:bold; margin: 0 0 12px; }
+.greytext { color: #b4b4b4; font-family: "robotoregular"; text-transform: uppercase; word-spacing: 8px; font-size: 33px; font-weight: bold; margin: 0 ; }
+.greytext > span{ display: block; font-size: 36px; font-weight: bold; word-spacing: 8px;}
+
+.appStore .btn-deskapp { float: right; margin: 20px 0 0; }
+.appStore .btn-deskapp { margin: 30px auto 0; }
+.appStore .btn-deskapp { max-width: 450px; }
+
+.appStore .btn-deskapp .deskapp a { box-sizing: border-box; display: block; padding: 0 !important; position: relative; }
+.appStore .btn-deskapp a { margin-bottom: 20px; }
+
+.appStore .btn-deskapp .deskapp a img { border-radius: 5px !important; display: block; max-width: 80%; transition: all 0.3s linear 0s !important; }
+.appStore .btn-deskapp .deskapp a:hover img { box-shadow: 5px 6px 0 rgba(194, 194, 194, 0.9) !important; transform: translateY(-5px); }
+.appStore .btn-deskapp p { color: #8b2740; font-family: "robotoregular"; font-size: 25px; text-align: center; word-spacing: 3px;}
+.screens { margin: 60px 0 0; }
+.homebg { width: 100%; }
+.greytext sup { font-size: 34px; font-weight: bold;  margin: 0 0 0 7px; top: 0; }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start App Store Page Css 18-2-2015 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start New Css 6-4-2016 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.uperappicon .fa { font-size: 20px; margin: 1px 0 0; }
+.view .btn.btn-block.btn-lg.btn-fill.btn-info { background: transparent none repeat scroll 0 0; border: 1px solid #841633; color: #841633; }
+.view .btn.btn-block.btn-lg.btn-fill.btn-info:hover { background: #841633; color: #fff; }
+
+.hotdeal {  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.23); margin: 0 0 15px; }
+
+.scrollbackgrund { padding: 20px 0; }
+.cartnumber { width: 100px; }
+.navigation ul li a { width: 100px; }
+.lblcarttotal { float: right; margin: 7px 0 0; }
+.cartnumber .fa.fa-shopping-basket { width: 35px; color: #841633; float: left; font-size: 30px; }
+.navigation { margin: 6px 0 0; }
+.lblcarttotal { float: left; margin: 7px 0 0 3px; }
+.city_deals .btn.btn-warning.btn-fill.btn-block { background: #8b2740 none repeat scroll 0 0; border: 1px solid #8b2740; }
+.small-6.columns.left a { font-family: robotoregular; }
+.footer-transparent::after, .subscribe-line-transparent::after { box-shadow: 0 1px 2px rgba(90, 100, 210, 0.63); }
+
+
+.v_demobtn .btn.btn-social.btn-fill { float: left; margin: 2px 0 10px; text-align: justify; width: 57%; }
+.about_ustextPart { /*border: 1px solid;*/ box-shadow: 0 0 3px rgba(255, 255, 255, 0.592); float: left; margin:25px 0 20px 14px; padding: 11px 15px; width: 98%; /*background:rgba(17, 17, 17, 0.25);*/ }
+.about_ustextPart > p { color: #fff; font-family: Kollektif; font-size: 15px; text-align:justify }
+.about_ustextPart h2 { color: #fff; float: left; font-size: 16px; font-weight: bold;  margin: 2px 0 7px; width: 100%; }
+.footerTtext_r1 { color: #fff;  float: left; font-family: robotoregular; margin: 9px 0 0; font-size:15px; }
+
+/*.city_deals .subscribe-line .form-control { font-size:24px }*/
+
+.v_demobtn .fa {
+    margin: 0 5px 0 0;
+}
+.city_deals .subscribe-line .form-control { font-size:24px }
+.btn.btn-default.btn-xs.btn.pull-right.btn-simple.xy_btn { margin: 4px 1px 0 7px; }
+.xy_btn {
+background:none !important;
+}
+.card-refine .header.headerCard1 { padding: 10px 2px 0; }
+.icon_h1 > img { display: block !important; width:auto !important; }
+.card-horizontal .content.content_v { padding: 3px 4px 10px 0; }
+.content_v .card-link.appr_ryt { margin: 7px 0 0; }
+
+
+.lolocater .bookform { background: transparent none repeat scroll 0 0; border: 1px solid #98004a; border-radius: 3px; color: #98004a; padding: 8px 30px;   font-family: RobotoCondensedLight;}
+
+.b_load_btn { float: left; margin:35px 0 20px 0; width: 100%; }
+.b_load_btn > a { border: 1px solid #8b2740; color: #8b2740; float: left; font-size: 26px; padding: 15px; text-align: center; width: 100%;   box-shadow: 1px 2px 4px rgba(139, 39, 64, 0.43); font-family:robotoregular }
+.b_load_btn > a:hover { background:#8b2740; color: #fff; box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.53); }
+.margin_locater { margin: 18px 0 0; }
+
+
+/*+++++++++++++++ Start Contact Us Css 6-4-2016 +++++++++++++++*/
+
+.company-description { background-color: rgba(0, 0, 0, 0.6); border-radius: 6px 0 0 6px; olor: #ffffff; padding: 20px 60px 20px 20px; position: absolute; right: 0; top: 220px; z-index: 3; }
+.contactUs_form { float: left; width: 100%; }
+.company-description h4 { color: #fff; margin:0 }
+.company-description p { color: #fff; }
+
+.contactUs_form .submit { margin: 32px 0 20px 0}
+.contactUs_form .submit .btn-info.btn-fill { background-color: transparent; border: 2px solid #8b2740; color: #8b2740; font-size: 18px; opacity: 1; padding: 8px 30px; }
+.contactUs_form .submit .btn-info.btn-fill:hover { background: #8b2740; color: #fff; }
+
+/*+++++++++++++++ End Contact Us Css 6-4-2016 +++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End New Css 6-4-2016 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+
+
+
+/*+++++++++++++++ Start About Us Css 7-4-2016 +++++++++++++++*/
+
+.aboutUs{ float: left; width: 100%; }
+.blog-post.aboutUs h1 { font-size: 30px !important; }
+.contact_ancher { color: #8b2740; font-weight: bold; }
+.blog-post.aboutUs img {
+    width: 100%;
+}
+
+
+
+
+/*+++++++++++++++ End About Us Css 7-4-2016 +++++++++++++++*/
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+       
+            if (navigator.userAgent.match(/iPhone/i)) {
+                window.location = "locallinkers://";
+            }
+
+
+            else if (navigator.userAgent.match(/Android/i)) {
+                window.location = 'intent://#Intent;scheme=locallinkers;package=com.hbs.hashbrownsys.locallinkers;end;';
+            }
+
+
+
+            //else {
+
+            //    window.location = 'http://locallinkers.​com/';
+
+            //}
+        
+    </script>
+</head>
+<body>
+   
+</body>
+</html>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="LocalLinkersEntities-Web.config Connection String" description="LocalLinkersEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/LocalLinkers.csdl|res://*/LocalLinkers.ssdl|res://*/LocalLinkers.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tcp:locallinkers.database.windows.net,1433;initial catalog=locallinkers;user id=locallinkers@locallinkers;pwd=Password1!;integrated security=false;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\tushar\ bedi\\Documents\\GitHub\\LocalLinkers\\LocalLinkers\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LocalLinkersEntities']/@connectionString" />
+  </parameter>
+</parameters>

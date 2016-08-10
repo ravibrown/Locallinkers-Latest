@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="locallinkers" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\tushar\ bedi\\Documents\\GitHub\\LocalLinkers\\LocalLinkers\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\tushar\ bedi\\Documents\\GitHub\\LocalLinkers\\LocalLinkers\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="LocalLinkersEntities-Web.config Connection String" description="" value="metadata=res://*/LocalLinkers.csdl|res://*/LocalLinkers.ssdl|res://*/LocalLinkers.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=tcp:locallinkers.database.windows.net,1433;Initial Catalog=locallinkers;user id=locallinkers@locallinkers;pwd=Password1!;Integrated Security=False;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\tushar\ bedi\\Documents\\GitHub\\LocalLinkers\\LocalLinkers\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LocalLinkersEntities']/@connectionString" />
+  </parameter>
+</parameters>
